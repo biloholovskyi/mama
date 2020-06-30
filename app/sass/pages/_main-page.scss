@@ -1,0 +1,142 @@
+@import './slider';
+@import './select';
+@import './dish-item';
+
+
+.main-slider {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background: #FFF8EE; 
+  position: relative;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  padding-top: 250px;
+  &::after {
+    content:  "";
+    background-image: url(../media/icon/small-spot.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 344.29px;
+    height: 415.65px;
+    position: absolute;
+    top: 117px;
+    left: 0;
+  } 
+  &::before {
+    content:  "";
+    background-image: url(../media/icon/big-spot.png);
+    background-position: center;
+    background-size: cover;
+    width: 653.22px;
+    height: 691.03px;
+    position: absolute; 
+    top: 143px;
+    right: 38px;
+  }
+}
+.dish-row {
+  margin-bottom: -87px;
+}
+// about section
+.about {
+  width: 100%;
+  background: #FFF8EE;
+  padding-top: 168px;
+  padding-bottom: 95px;
+  .about-title {
+    margin-bottom: 57px;
+    h2 {
+      font-family: Mixta Didone Alt;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 80px;
+      line-height: 100%;
+      text-align: center;
+      color: #0B1828;
+      margin-bottom: 24px;
+    }
+    p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 36px;
+      text-align: center;
+      letter-spacing: -0.01em;
+      color: #62605D;
+      max-width: 645px;
+      margin: 0 auto;
+
+    }
+  }
+  .about-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .about-name {
+      font-family: Mixta Didone Alt;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 36px;
+      line-height: 100%;
+      color: #0B1828;
+      align-self: flex-start;
+      max-width: 470px;
+      margin-bottom: 16px;
+    }
+    .desc {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      color: #62605D;
+      max-width: 500px;
+    align-self: flex-start;
+    
+    }
+  }
+  .about-photo {
+    width: 498px;
+    height: 525px;
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    img {
+      width: 500px;
+      height: 533px;
+      object-position: center;
+      object-fit: cover;
+      position: absolute;
+      z-index: 2;
+    }
+    &:after {
+      content:  "";
+      background-image: url(../media/icon/big-spot.png);
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 54px;
+      z-index: 1;
+    }
+  }
+  & .about-row:nth-child(odd) {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .about-photo {
+      transform: scale(-1, 1);
+      margin-left: 0;
+      margin-right: auto;
+      &:after {
+        background-image: url(../media/icon/small-spot2.png);
+      }
+    }
+  }
+}

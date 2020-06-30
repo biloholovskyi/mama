@@ -11,17 +11,380 @@
     <title>MAMA</title>
   </head>
   <body>
-    <header class="header"></header>
-    <div class="container">
-      <div class="row">
-        <div class="col-4">
-          <h1>Напитки</h1>
+    <header class="header">
+      <div class="header-content"><a href="/"><img class="logo" src="../media/icon/logo.svg" alt="logo"></a>
+        <div class="header-nav">
+          <ul>
+            <li>
+              <button>Меню<img src="../media/icon/logo-menu.svg" alt="logo"></button>
+            </li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Оплата и доставка</a></li>
+          </ul>
         </div>
-        <div class="col-4">
-          <h1>text</h1>
+      </div>
+      <div class="header-contact">
+        <div class="phone"><a href="#">+7 (843) 276-66-76<img src="../media/icon/tel.svg" alt="icon"></a><a href="#">Вам перезвонить?</a></div>
+        <div class="social"><a href="#"><img src="../media/icon/twit.svg" alt="icon"></a><a href="#">        <img src="../media/icon/wApp.svg" alt="icon"></a></div>
+      </div>
+    </header>
+    <div class="main-slider">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="owl-carousel owl-theme" id="main-slider">
+              <div class="item">
+                <div class="slider-info">
+                  <h1>Паста <br>с лососем</h1>
+                  <p class="desc">Курица, лапша яичная, бульон куриный, морковь, лук </p>
+                  <div class="count-list-wrap">
+                    <select id="dishes">
+                      <option value="hide">1 порция</option>
+                      <option value="01">1 порция</option>
+                      <option value="02">2 порции</option>
+                      <option value="03">3 порции</option>
+                      <option value="04">4 порции</option>
+                      <option value="05">5 порций</option>
+                      <option value="06">6 порций</option>
+                      <option value="07">7 порций</option>
+                      <option value="08">8 порций</option>
+                      <option value="09">9 порций</option>
+                      <option value="10">10 порций</option>
+                    </select>
+                    <div class="price"> 
+                      <div class="offer">199.00₽ </div>
+                      <p>123.00₽  </p>
+                    </div>
+                    <button class="busket"></button>
+                  </div>
+                </div><img class="slider-img" src="../media/image/dish.jpg" alt="image">
+              </div>
+              <div class="item">
+                <div class="slider-info">
+                  <h1>Паста <br>с лососем</h1>
+                  <p class="desc">Курица, лапша яичная, бульон куриный, морковь, лук </p>
+                  <div class="count-list-wrap">
+                    <select id="dishes">
+                      <option value="hide">1 порция</option>
+                      <option value="01">1 порция</option>
+                      <option value="02">2 порция</option>
+                      <option value="03">3 порция</option>
+                      <option value="04">4 порция</option>
+                      <option value="05">5 порция</option>
+                      <option value="06">6 порция</option>
+                      <option value="07">7 порция</option>
+                      <option value="08">8 порция</option>
+                      <option value="09">9 порция</option>
+                      <option value="10">10 порция</option>
+                    </select>
+                    <div class="price"> 
+                      <div class="offer">199.00₽</div>
+                      <p>123.00₽  </p>
+                    </div>
+                    <button class="busket"></button>
+                  </div>
+                </div><img class="slider-img" src="../media/image/dish.jpg" alt="image">
+              </div>
+              <div class="item">
+                <div class="slider-info">
+                  <h1>Паста <br>с лососем</h1>
+                  <p class="desc">Курица, лапша яичная, бульон куриный, морковь, лук </p>
+                  <div class="count-list-wrap">
+                    <select id="dishes">
+                      <option value="hide">1 порция  </option>
+                      <option value="01">1 порция</option>
+                      <option value="02">2 порции</option>
+                      <option value="03">3 порции</option>
+                      <option value="04">4 порции</option>
+                      <option value="05">5 порций</option>
+                      <option value="06">6 порций</option>
+                      <option value="07">7 порций</option>
+                      <option value="08">8 порций</option>
+                      <option value="09">9 порций</option>
+                      <option value="10">10 порций</option>
+                    </select>
+                    <div class="price"> 
+                      <div class="offer">199.00₽</div>
+                      <p>123.00₽  </p>
+                    </div>
+                    <button class="busket"></button>
+                  </div>
+                </div><img class="slider-img" src="../media/image/dish.jpg" alt="image">
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-4">
-          <h1>text</h1>
+      </div>
+    </div>
+    <div class="popular-dishes">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Популярные блюда</h2>
+          </div>
+        </div>
+        <div class="row">     
+          <div class="col-12">
+            <div class="tabs">
+              <div class="tab"> Все категории</div>
+              <div class="tab">Салаты</div>
+              <div class="tab"> Супы</div>
+              <div class="tab">Второе</div>
+              <div class="tab">Напитки </div>
+            </div>
+          </div>
+        </div>
+        <div class="row dish-row">
+          <div class="col-4">
+            <div class="dish-item">
+              <div class="dish-title">
+                <h4>Салаты</h4>
+                <h4 class="bold">Греческий</h4>
+              </div><img class="photo" src="../media/image/dish2.png" alt="">
+              <div class="dish-list-wrap">
+                <select id="dishes">
+                  <option value="hide">1 порция  </option>
+                  <option value="01">1 порция</option>
+                  <option value="02">2 порции</option>
+                  <option value="03">3 порции</option>
+                  <option value="04">4 порции</option>
+                  <option value="05">5 порций</option>
+                  <option value="06">6 порций</option>
+                  <option value="07">7 порций</option>
+                  <option value="08">8 порций</option>
+                  <option value="09">9 порций</option>
+                  <option value="10">10 порций</option>
+                </select>
+                <button class="busket">199.00₽</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="dish-item">
+              <div class="dish-title">
+                <h4>Салаты</h4>
+                <h4 class="bold">Греческий</h4>
+              </div><img class="photo" src="../media/image/dish2.png" alt="">
+              <div class="dish-list-wrap">
+                <select id="dishes">
+                  <option value="hide">1 порция  </option>
+                  <option value="01">1 порция</option>
+                  <option value="02">2 порции</option>
+                  <option value="03">3 порции</option>
+                  <option value="04">4 порции</option>
+                  <option value="05">5 порций</option>
+                  <option value="06">6 порций</option>
+                  <option value="07">7 порций</option>
+                  <option value="08">8 порций</option>
+                  <option value="09">9 порций</option>
+                  <option value="10">10 порций</option>
+                </select>
+                <button class="busket">199.00₽</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="dish-item">
+              <div class="dish-title">
+                <h4>Салаты</h4>
+                <h4 class="bold">Греческий</h4>
+              </div><img class="photo" src="../media/image/dish2.png" alt="">
+              <div class="dish-list-wrap">
+                <select id="dishes">
+                  <option value="hide">1 порция  </option>
+                  <option value="01">1 порция</option>
+                  <option value="02">2 порции</option>
+                  <option value="03">3 порции</option>
+                  <option value="04">4 порции</option>
+                  <option value="05">5 порций</option>
+                  <option value="06">6 порций</option>
+                  <option value="07">7 порций</option>
+                  <option value="08">8 порций</option>
+                  <option value="09">9 порций</option>
+                  <option value="10">10 порций</option>
+                </select>
+                <button class="busket">199.00₽ </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="dish-item">
+              <div class="dish-title">
+                <h4>Салаты</h4>
+                <h4 class="bold">Греческий</h4>
+              </div><img class="photo" src="../media/image/dish2.png" alt="">
+              <div class="dish-list-wrap">
+                <select id="dishes">
+                  <option value="hide">1 порция  </option>
+                  <option value="01">1 порция</option>
+                  <option value="02">2 порции</option>
+                  <option value="03">3 порции</option>
+                  <option value="04">4 порции</option>
+                  <option value="05">5 порций</option>
+                  <option value="06">6 порций</option>
+                  <option value="07">7 порций</option>
+                  <option value="08">8 порций</option>
+                  <option value="09">9 порций</option>
+                  <option value="10">10 порций</option>
+                </select>
+                <button class="busket">199.00₽</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="dish-item">
+              <div class="dish-title">
+                <h4>Салаты</h4>
+                <h4 class="bold">Греческий</h4>
+              </div><img class="photo" src="../media/image/dish2.png" alt="">
+              <div class="dish-list-wrap">
+                <select id="dishes">
+                  <option value="hide">1 порция  </option>
+                  <option value="01">1 порция</option>
+                  <option value="02">2 порции</option>
+                  <option value="03">3 порции</option>
+                  <option value="04">4 порции</option>
+                  <option value="05">5 порций</option>
+                  <option value="06">6 порций</option>
+                  <option value="07">7 порций</option>
+                  <option value="08">8 порций</option>
+                  <option value="09">9 порций</option>
+                  <option value="10">10 порций</option>
+                </select>
+                <button class="busket">199.00₽</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="dish-item">
+              <div class="dish-title">
+                <h4>Салаты</h4>
+                <h4 class="bold">Греческий</h4>
+              </div><img class="photo" src="../media/image/dish2.png" alt="">
+              <div class="dish-list-wrap">
+                <select id="dishes">
+                  <option value="hide">1 порция  </option>
+                  <option value="01">1 порция</option>
+                  <option value="02">2 порции</option>
+                  <option value="03">3 порции</option>
+                  <option value="04">4 порции</option>
+                  <option value="05">5 порций</option>
+                  <option value="06">6 порций</option>
+                  <option value="07">7 порций</option>
+                  <option value="08">8 порций</option>
+                  <option value="09">9 порций</option>
+                  <option value="10">10 порций</option>
+                </select>
+                <button class="busket">199.00₽ </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="dish-item">
+              <div class="dish-title">
+                <h4>Салаты</h4>
+                <h4 class="bold">Греческий</h4>
+              </div><img class="photo" src="../media/image/dish2.png" alt="">
+              <div class="dish-list-wrap">
+                <select id="dishes">
+                  <option value="hide">1 порция  </option>
+                  <option value="01">1 порция</option>
+                  <option value="02">2 порции</option>
+                  <option value="03">3 порции</option>
+                  <option value="04">4 порции</option>
+                  <option value="05">5 порций</option>
+                  <option value="06">6 порций</option>
+                  <option value="07">7 порций</option>
+                  <option value="08">8 порций</option>
+                  <option value="09">9 порций</option>
+                  <option value="10">10 порций</option>
+                </select>
+                <button class="busket">199.00₽</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="dish-item">
+              <div class="dish-title">
+                <h4>Салаты</h4>
+                <h4 class="bold">Греческий</h4>
+              </div><img class="photo" src="../media/image/dish2.png" alt="">
+              <div class="dish-list-wrap">
+                <select id="dishes">
+                  <option value="hide">1 порция  </option>
+                  <option value="01">1 порция</option>
+                  <option value="02">2 порции</option>
+                  <option value="03">3 порции</option>
+                  <option value="04">4 порции</option>
+                  <option value="05">5 порций</option>
+                  <option value="06">6 порций</option>
+                  <option value="07">7 порций</option>
+                  <option value="08">8 порций</option>
+                  <option value="09">9 порций</option>
+                  <option value="10">10 порций</option>
+                </select>
+                <button class="busket">199.00₽</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="dish-item">
+              <div class="dish-title">
+                <h4>Салаты</h4>
+                <h4 class="bold">Греческий</h4>
+              </div><img class="photo" src="../media/image/dish2.png" alt="">
+              <div class="dish-list-wrap">
+                <select id="dishes">
+                  <option value="hide">1 порция  </option>
+                  <option value="01">1 порция</option>
+                  <option value="02">2 порции</option>
+                  <option value="03">3 порции</option>
+                  <option value="04">4 порции</option>
+                  <option value="05">5 порций</option>
+                  <option value="06">6 порций</option>
+                  <option value="07">7 порций</option>
+                  <option value="08">8 порций</option>
+                  <option value="09">9 порций</option>
+                  <option value="10">10 порций</option>
+                </select>
+                <button class="busket">199.00₽</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="about-title">
+              <h2>О нас</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium</p>
+            </div>
+          </div>
+        </div>
+        <div class="row about-row">
+          <div class="col-6">
+            <div class="about-info">
+              <div class="about-name">Галина Сергеевна Васнецова</div>
+              <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="about-photo"><img src="../media/image/about.png" alt="photo"></div>
+          </div>
+        </div>
+        <div class="row about-row">
+          <div class="col-6">
+            <div class="about-info">
+              <div class="about-name">Галина Сергеевна Васнецова</div>
+              <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="about-photo"><img src="../media/image/about2.png" alt="photo"></div>
+          </div>
         </div>
       </div>
     </div>

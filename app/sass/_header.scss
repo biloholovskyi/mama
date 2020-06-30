@@ -1,3 +1,117 @@
 .header {
-
+  width: 100%;
+  padding: 30px 48px 0;
+  display: flex;
+  justify-content: space-between;  
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  .header-content {
+    display: flex;
+    align-items: center;
+    img{
+      width: 119.16px;
+      height: 64px;
+      object-position: center;
+      object-fit: cover;
+      margin-right: 47px;
+    }
+    .header-nav {
+      ul {
+        display: flex;
+        align-items: center;
+        li {
+          list-style: none;
+          margin-right: 24px;
+          button {
+          
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 125%;
+            letter-spacing: -0.01em;
+            color: #312F2E;
+            background-color: transparent;
+            border: none;
+            display: flex;
+            flex-direction: row-reverse;
+            background: #484F8C;
+            border-radius: 10px;
+            padding: 16px 14px;
+            align-items: center;
+            color: #fff;
+            img {
+              width: 16px;
+              height: 12px;
+              margin-right: 8px;
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+          a {
+          
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 125%;
+            letter-spacing: -0.01em;
+            color: #312F2E;
+          }
+        }
+      }
+    }
+  }
+  .header-contact {
+    display: flex;
+    align-items: center;
+    .phone {
+      display: flex;
+      margin-right: 48px;
+      align-items: center;
+      & a:first-child {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 125%;
+        letter-spacing: -0.01em;
+        color: #312F2E;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        margin-right: 24px;
+        img {
+          width: 24px;
+          height: 24px;
+          margin-right: 8px;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+      & a:last-child {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 125%;
+        letter-spacing: -0.01em;
+        color: #484F8C;
+      }
+    }
+    .social {
+      display: flex;
+      align-items: center;
+      a {
+        display: block;
+        margin-right: 24px;
+        img {
+          width: 36px;
+          height: 36px;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+      & a:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }

@@ -1,0 +1,131 @@
+.popular-dishes {
+  width: 100%;
+  padding-top: 105px;
+  background: #FAECD7; 
+  h2 {
+    font-family: Mixta Didone Alt;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 80px;
+    line-height: 100%;
+    text-align: center;
+    color: #0B1828;
+    max-width: 500px;
+    margin:  0 auto;
+    margin-bottom: 32px;
+  }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 56px;
+    .tab {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 30px;
+      letter-spacing: -0.01em;
+      color: #62605D;
+      margin-right: 32px;
+      padding-bottom: 4px;
+      cursor: pointer;
+    }
+    & .tab:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.dish-item {
+  box-shadow: 0px 4px 18px rgba(49, 47, 46, 0.1);
+  background: #FFF8EE;
+  border-radius: 20px;
+  position: relative;
+  padding-top: 36px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 18px;
+  .dish-title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 25px;
+    h4 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 125%;
+      letter-spacing: -0.01em;
+      color: #62605D;
+      margin-bottom: 5px;
+    }
+    .bold {
+      font-family: Mixta Didone Alt;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 100%;
+      color: #0B1828; 
+      margin-bottom: 0px;
+    }
+  }
+  .photo {
+    width: 253px;
+    height: 253px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 25px;
+  }
+  .dish-list-wrap {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .select {
+      flex: 50%;
+      padding: 24px 0;
+      .select-styled {
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      }
+    }
+    .busket {
+      flex: 50%;
+    height: 100%;
+    background: #FC903D;
+    border: none;
+    padding: 24px 0;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: right;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    padding-left: 44px;
+    &::after {
+      content:  "";
+      background-image: url(../media/icon/basket.svg);
+      background-position: center;
+      background-size: cover;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 28px;
+    }
+    }
+    
+  }
+}

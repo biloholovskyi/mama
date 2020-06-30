@@ -4,11 +4,298 @@ block variables
   - const pageTitle = 'MAMA'
 
 block content
-  .container
-    .row
-      .col-4
-        h1 Напитки
-      .col-4
-        h1 text
-      .col-4
-        h1 text
+  .main-slider
+    .container
+      .row
+        .col-12
+          .owl-carousel.owl-theme#main-slider
+            .item
+              .slider-info
+                h1 Паста #[br]с лососем
+                p.desc Курица, лапша яичная, бульон куриный, морковь, лук 
+                .count-list-wrap
+                  select#dishes
+                    option(value="hide") 1 порция
+                    option(value="01") 1 порция
+                    option(value="02") 2 порции
+                    option(value="03") 3 порции
+                    option(value="04") 4 порции
+                    option(value="05") 5 порций
+                    option(value="06") 6 порций
+                    option(value="07") 7 порций
+                    option(value="08") 8 порций
+                    option(value="09") 9 порций
+                    option(value="10") 10 порций
+                  .price 
+                    .offer 199.00₽ 
+                    p 123.00₽  
+                  button.busket
+              img.slider-img(src="../media/image/dish.jpg", alt="image")
+            .item
+              .slider-info
+                h1 Паста #[br]с лососем
+                p.desc Курица, лапша яичная, бульон куриный, морковь, лук 
+                .count-list-wrap
+                  select#dishes
+                    option(value="hide") 1 порция
+                    option(value="01") 1 порция
+                    option(value="02") 2 порция
+                    option(value="03") 3 порция
+                    option(value="04") 4 порция
+                    option(value="05") 5 порция
+                    option(value="06") 6 порция
+                    option(value="07") 7 порция
+                    option(value="08") 8 порция
+                    option(value="09") 9 порция
+                    option(value="10") 10 порция
+                  .price 
+                    .offer 199.00₽
+                    p 123.00₽  
+                  button.busket
+              img.slider-img(src="../media/image/dish.jpg", alt="image")
+            .item
+              .slider-info
+                h1 Паста #[br]с лососем
+                p.desc Курица, лапша яичная, бульон куриный, морковь, лук 
+                .count-list-wrap
+                  select#dishes
+                    option(value="hide") 1 порция  
+                    option(value="01") 1 порция
+                    option(value="02") 2 порции
+                    option(value="03") 3 порции
+                    option(value="04") 4 порции
+                    option(value="05") 5 порций
+                    option(value="06") 6 порций
+                    option(value="07") 7 порций
+                    option(value="08") 8 порций
+                    option(value="09") 9 порций
+                    option(value="10") 10 порций
+                  .price 
+                    .offer 199.00₽
+                    p 123.00₽  
+                  button.busket
+              img.slider-img(src="../media/image/dish.jpg", alt="image")
+
+  .popular-dishes
+    .container
+      .row
+        .col-12
+          h2 Популярные блюда
+      .row      
+        .col-12
+          .tabs
+            .tab  Все категории
+            .tab Салаты
+            .tab  Супы
+            .tab Второе
+            .tab Напитки 
+      .row.dish-row
+        .col-4
+          .dish-item
+            .dish-title
+              h4 Салаты
+              h4.bold Греческий
+            img(src="../media/image/dish2.png", alt="").photo
+            .dish-list-wrap
+              select#dishes
+                option(value="hide") 1 порция  
+                option(value="01") 1 порция
+                option(value="02") 2 порции
+                option(value="03") 3 порции
+                option(value="04") 4 порции
+                option(value="05") 5 порций
+                option(value="06") 6 порций
+                option(value="07") 7 порций
+                option(value="08") 8 порций
+                option(value="09") 9 порций
+                option(value="10") 10 порций
+              button.busket 199.00₽
+        .col-4
+          .dish-item
+            .dish-title
+              h4 Салаты
+              h4.bold Греческий
+            img(src="../media/image/dish2.png", alt="").photo
+            .dish-list-wrap
+              select#dishes
+                option(value="hide") 1 порция  
+                option(value="01") 1 порция
+                option(value="02") 2 порции
+                option(value="03") 3 порции
+                option(value="04") 4 порции
+                option(value="05") 5 порций
+                option(value="06") 6 порций
+                option(value="07") 7 порций
+                option(value="08") 8 порций
+                option(value="09") 9 порций
+                option(value="10") 10 порций
+              button.busket 199.00₽
+        .col-4
+          .dish-item
+            .dish-title
+              h4 Салаты
+              h4.bold Греческий
+            img(src="../media/image/dish2.png", alt="").photo
+            .dish-list-wrap
+              select#dishes
+                option(value="hide") 1 порция  
+                option(value="01") 1 порция
+                option(value="02") 2 порции
+                option(value="03") 3 порции
+                option(value="04") 4 порции
+                option(value="05") 5 порций
+                option(value="06") 6 порций
+                option(value="07") 7 порций
+                option(value="08") 8 порций
+                option(value="09") 9 порций
+                option(value="10") 10 порций
+              button.busket 199.00₽ 
+        .col-4
+          .dish-item
+            .dish-title
+              h4 Салаты
+              h4.bold Греческий
+            img(src="../media/image/dish2.png", alt="").photo
+            .dish-list-wrap
+              select#dishes
+                option(value="hide") 1 порция  
+                option(value="01") 1 порция
+                option(value="02") 2 порции
+                option(value="03") 3 порции
+                option(value="04") 4 порции
+                option(value="05") 5 порций
+                option(value="06") 6 порций
+                option(value="07") 7 порций
+                option(value="08") 8 порций
+                option(value="09") 9 порций
+                option(value="10") 10 порций
+              button.busket 199.00₽
+        .col-4
+          .dish-item
+            .dish-title
+              h4 Салаты
+              h4.bold Греческий
+            img(src="../media/image/dish2.png", alt="").photo
+            .dish-list-wrap
+              select#dishes
+                option(value="hide") 1 порция  
+                option(value="01") 1 порция
+                option(value="02") 2 порции
+                option(value="03") 3 порции
+                option(value="04") 4 порции
+                option(value="05") 5 порций
+                option(value="06") 6 порций
+                option(value="07") 7 порций
+                option(value="08") 8 порций
+                option(value="09") 9 порций
+                option(value="10") 10 порций
+              button.busket 199.00₽
+        .col-4
+          .dish-item
+            .dish-title
+              h4 Салаты
+              h4.bold Греческий
+            img(src="../media/image/dish2.png", alt="").photo
+            .dish-list-wrap
+              select#dishes
+                option(value="hide") 1 порция  
+                option(value="01") 1 порция
+                option(value="02") 2 порции
+                option(value="03") 3 порции
+                option(value="04") 4 порции
+                option(value="05") 5 порций
+                option(value="06") 6 порций
+                option(value="07") 7 порций
+                option(value="08") 8 порций
+                option(value="09") 9 порций
+                option(value="10") 10 порций
+              button.busket 199.00₽ 
+        .col-4
+          .dish-item
+            .dish-title
+              h4 Салаты
+              h4.bold Греческий
+            img(src="../media/image/dish2.png", alt="").photo
+            .dish-list-wrap
+              select#dishes
+                option(value="hide") 1 порция  
+                option(value="01") 1 порция
+                option(value="02") 2 порции
+                option(value="03") 3 порции
+                option(value="04") 4 порции
+                option(value="05") 5 порций
+                option(value="06") 6 порций
+                option(value="07") 7 порций
+                option(value="08") 8 порций
+                option(value="09") 9 порций
+                option(value="10") 10 порций
+              button.busket 199.00₽
+        .col-4
+          .dish-item
+            .dish-title
+              h4 Салаты
+              h4.bold Греческий
+            img(src="../media/image/dish2.png", alt="").photo
+            .dish-list-wrap
+              select#dishes
+                option(value="hide") 1 порция  
+                option(value="01") 1 порция
+                option(value="02") 2 порции
+                option(value="03") 3 порции
+                option(value="04") 4 порции
+                option(value="05") 5 порций
+                option(value="06") 6 порций
+                option(value="07") 7 порций
+                option(value="08") 8 порций
+                option(value="09") 9 порций
+                option(value="10") 10 порций
+              button.busket 199.00₽
+        .col-4
+          .dish-item
+            .dish-title
+              h4 Салаты
+              h4.bold Греческий
+            img(src="../media/image/dish2.png", alt="").photo
+            .dish-list-wrap
+              select#dishes
+                option(value="hide") 1 порция  
+                option(value="01") 1 порция
+                option(value="02") 2 порции
+                option(value="03") 3 порции
+                option(value="04") 4 порции
+                option(value="05") 5 порций
+                option(value="06") 6 порций
+                option(value="07") 7 порций
+                option(value="08") 8 порций
+                option(value="09") 9 порций
+                option(value="10") 10 порций
+              button.busket 199.00₽
+  .about
+    .container
+      .row
+        .col-12
+          .about-title
+            h2 О нас
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium
+      .row.about-row
+        .col-6
+          .about-info
+            .about-name Галина Сергеевна Васнецова
+            .desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.
+        .col-6
+          .about-photo
+            img(src="../media/image/about.png", alt="photo")
+      .row.about-row
+        .col-6
+          .about-info
+            .about-name Галина Сергеевна Васнецова
+            .desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.
+        .col-6
+          .about-photo
+            img(src="../media/image/about2.png", alt="photo")
+                  
+
+                        
+
+
+

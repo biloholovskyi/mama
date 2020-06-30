@@ -3,6 +3,7 @@
   margin: 0;
   outline: none;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body,
@@ -56,3 +57,4 @@ button {
 
 
 /*pages*/
+@import './pages/main-page';
