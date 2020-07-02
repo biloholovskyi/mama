@@ -3,7 +3,8 @@
   padding: 30px 48px 0;
   display: flex;
   justify-content: space-between;  
-  position: fixed;
+  position: absolute;
+  left: 0;
   top: 0;
   z-index: 10;
   .header-content {
@@ -115,3 +116,30 @@
     }
   }
 }
+
+.menu {
+position: relative;
+  .romb {
+   
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    position: absolute;
+    transform: rotate(45deg) translateY(50%);
+    left: 50%;
+    bottom: -21px;
+    box-shadow: 0 16px 32px rgba(0,0,0,.1);
+    z-index: 22;
+    visibility: hidden;
+    transition: .3s;
+  }
+  & .romb.active {
+    visibility: visible;
+    transition: .3s;
+  }
+}
+
+body.active{
+    overflow: hidden!important;
+}
+

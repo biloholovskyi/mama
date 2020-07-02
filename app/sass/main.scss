@@ -10,7 +10,9 @@ body,
 html {
   position: relative;
 }
-
+body {
+  overflow: visible!important;
+}
 h1 {
   text-transform: none;
 }

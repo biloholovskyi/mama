@@ -33,8 +33,8 @@ block content
               img.slider-img(src="../media/image/dish.jpg", alt="image")
             .item
               .slider-info
-                h1 Паста #[br]с лососем
-                p.desc Курица, лапша яичная, бульон куриный, морковь, лук 
+                h1 Салат #[br]Греческий
+                p.desc лапша яичная,  морковь, лук 
                 .count-list-wrap
                   select#dishes
                     option(value="hide") 1 порция
@@ -49,14 +49,14 @@ block content
                     option(value="09") 9 порция
                     option(value="10") 10 порция
                   .price 
-                    .offer 199.00₽
-                    p 123.00₽  
+                    .offer 169.00₽
+                    p 223.00₽  
                   button.busket
-              img.slider-img(src="../media/image/dish.jpg", alt="image")
+              img.slider-img(src="../media/image/dish2.png", alt="image")
             .item
               .slider-info
-                h1 Паста #[br]с лососем
-                p.desc Курица, лапша яичная, бульон куриный, морковь, лук 
+                h1 Солянка
+                p.desc бульон куриный, морковь, лук 
                 .count-list-wrap
                   select#dishes
                     option(value="hide") 1 порция  
@@ -71,8 +71,8 @@ block content
                     option(value="09") 9 порций
                     option(value="10") 10 порций
                   .price 
-                    .offer 199.00₽
-                    p 123.00₽  
+                    .offer 200.00₽
+                    p 150.00₽  
                   button.busket
               img.slider-img(src="../media/image/dish.jpg", alt="image")
 
@@ -95,7 +95,7 @@ block content
             .dish-title
               h4 Салаты
               h4.bold Греческий
-            img(src="../media/image/dish2.png", alt="").photo
+            img.food-img(src="../media/image/dish2.png", alt="").photo
             .dish-list-wrap
               select#dishes
                 option(value="hide") 1 порция  
@@ -113,9 +113,9 @@ block content
         .col-4
           .dish-item
             .dish-title
-              h4 Салаты
-              h4.bold Греческий
-            img(src="../media/image/dish2.png", alt="").photo
+              h4 Суп
+              h4.bold Солянка
+            img.food-img(src="../media/image/dish2.png", alt="").photo
             .dish-list-wrap
               select#dishes
                 option(value="hide") 1 порция  
@@ -133,9 +133,9 @@ block content
         .col-4
           .dish-item
             .dish-title
-              h4 Салаты
-              h4.bold Греческий
-            img(src="../media/image/dish2.png", alt="").photo
+              h4 Второе
+              h4.bold Паста с лососем
+            img.food-img(src="../media/image/dish2.png", alt="").photo
             .dish-list-wrap
               select#dishes
                 option(value="hide") 1 порция  
@@ -155,7 +155,7 @@ block content
             .dish-title
               h4 Салаты
               h4.bold Греческий
-            img(src="../media/image/dish2.png", alt="").photo
+            img.food-img(src="../media/image/dish2.png", alt="").photo
             .dish-list-wrap
               select#dishes
                 option(value="hide") 1 порция  
@@ -175,7 +175,7 @@ block content
             .dish-title
               h4 Салаты
               h4.bold Греческий
-            img(src="../media/image/dish2.png", alt="").photo
+            img.food-img(src="../media/image/dish2.png", alt="").photo
             .dish-list-wrap
               select#dishes
                 option(value="hide") 1 порция  
@@ -195,7 +195,7 @@ block content
             .dish-title
               h4 Салаты
               h4.bold Греческий
-            img(src="../media/image/dish2.png", alt="").photo
+            img.food-img(src="../media/image/dish2.png", alt="").photo
             .dish-list-wrap
               select#dishes
                 option(value="hide") 1 порция  
@@ -215,7 +215,7 @@ block content
             .dish-title
               h4 Салаты
               h4.bold Греческий
-            img(src="../media/image/dish2.png", alt="").photo
+            img.food-img(src="../media/image/dish2.png", alt="").photo
             .dish-list-wrap
               select#dishes
                 option(value="hide") 1 порция  
@@ -235,7 +235,7 @@ block content
             .dish-title
               h4 Салаты
               h4.bold Греческий
-            img(src="../media/image/dish2.png", alt="").photo
+            img.food-img(src="../media/image/dish2.png", alt="").photo
             .dish-list-wrap
               select#dishes
                 option(value="hide") 1 порция  
@@ -255,7 +255,7 @@ block content
             .dish-title
               h4 Салаты
               h4.bold Греческий
-            img(src="../media/image/dish2.png", alt="").photo
+            img.food-img(src="../media/image/dish2.png", alt="").photo
             .dish-list-wrap
               select#dishes
                 option(value="hide") 1 порция  
@@ -288,14 +288,90 @@ block content
       .row.about-row
         .col-6
           .about-info
-            .about-name Галина Сергеевна Васнецова
+            .about-name Илья Васильевич Полежайкин
             .desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.
         .col-6
           .about-photo
             img(src="../media/image/about2.png", alt="photo")
-                  
 
-                        
+  .order
+    .container
+      .row
+        .col-12
+          h2 Как заказать? 
+      .row
+        .col-3
+          .order-text
+            .order-item
+              img(src="../media/icon/order1.svg", alt="icon")
+              h3 Lorem ipsum dolor sit
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            .order-item
+              .img-item 3
+              h3 Lorem ipsum dolor sit
+              p Donec ante ex, rutrum in tempor quis, fringilla sed ex
+        .col-6
+          img.order-img(src="../media/image/2.png", alt="image") 
+        .col-3
+          .order-text
+            .order-item
+              .img-item 2
+                //- img(src="../media/icon/orderbg.svg", alt="icon")
+              h3 Lorem ipsum dolor sit
+              p Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel
+            .order-item
+              .img-item 4
+              h3 Suspendisse lacinia
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit 
+  .payment
+    .container
+      .row
+        .col-12
+          h2 Как оплатить?
+      .row
+        .col-4
+          .pay-item
+            .img-item 1
+            h3 Lorem ipsum dolor sit
+            p Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel
+        .col-4
+          .pay-item
+            .img-item 2
+            h3 Lorem ipsum dolor sit
+            p Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel
+        .col-4
+          .pay-item
+            .img-item 3
+            h3 Lorem ipsum dolor sit
+            p Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel  
+      .row
+        .col-12
+          .payment-method
+            img(src="../media/image/pay.jpg", alt="logo") 
+            img(src="../media/image/pay2.jpg", alt="logo") 
+            img(src="../media/image/pay3.jpg", alt="logo") 
+            img(src="../media/image/pay4.png", alt="logo") 
+            img(src="../media/image/pay5.png", alt="logo") 
+  
+    .container
+      .row
+        .col-12
+          .callback
+            h3 Вам перезвонить?
+            h4 Phasellus aliquam, est a semper dignissim
+            form
+              input(type="text" placeholder="Ваш номер телефона")
+              input(type="submit" value="Заказать звонок")
+            p Нажимая “Оформить заказ”  вы соглашаетесь с #[a(href="#") Политикой обработки персональных данных]
+
+  include ../modules/modal-menu 
+  include ../modules/item-modal                 
+         
+                          
+
+
+
+
 
 
 
