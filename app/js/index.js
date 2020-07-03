@@ -10,6 +10,8 @@ $(document).ready((e) => {
       margin:10,
       nav:true,
       dots:false,
+      mouseDrag: false,
+      touchDrag: false,
       items: 1,
       animateOut: 'fadeOut',
       animateIn: 'fadeIn'
