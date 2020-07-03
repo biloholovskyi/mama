@@ -14,18 +14,7 @@ block content
                 h1 Паста #[br]с лососем
                 p.desc Курица, лапша яичная, бульон куриный, морковь, лук 
                 .count-list-wrap
-                  select#dishes
-                    option(value="hide") 1 порция
-                    option(value="01") 1 порция
-                    option(value="02") 2 порции
-                    option(value="03") 3 порции
-                    option(value="04") 4 порции
-                    option(value="05") 5 порций
-                    option(value="06") 6 порций
-                    option(value="07") 7 порций
-                    option(value="08") 8 порций
-                    option(value="09") 9 порций
-                    option(value="10") 10 порций
+                  .select-num 1 порция
                   .price 
                     .offer 199.00₽ 
                     p 123.00₽  
@@ -36,18 +25,7 @@ block content
                 h1 Салат #[br]Греческий
                 p.desc лапша яичная,  морковь, лук 
                 .count-list-wrap
-                  select#dishes
-                    option(value="hide") 1 порция
-                    option(value="01") 1 порция
-                    option(value="02") 2 порция
-                    option(value="03") 3 порция
-                    option(value="04") 4 порция
-                    option(value="05") 5 порция
-                    option(value="06") 6 порция
-                    option(value="07") 7 порция
-                    option(value="08") 8 порция
-                    option(value="09") 9 порция
-                    option(value="10") 10 порция
+                  .select-num 1 порция
                   .price 
                     .offer 169.00₽
                     p 223.00₽  
@@ -58,18 +36,7 @@ block content
                 h1 Солянка
                 p.desc бульон куриный, морковь, лук 
                 .count-list-wrap
-                  select#dishes
-                    option(value="hide") 1 порция  
-                    option(value="01") 1 порция
-                    option(value="02") 2 порции
-                    option(value="03") 3 порции
-                    option(value="04") 4 порции
-                    option(value="05") 5 порций
-                    option(value="06") 6 порций
-                    option(value="07") 7 порций
-                    option(value="08") 8 порций
-                    option(value="09") 9 порций
-                    option(value="10") 10 порций
+                  .select-num 1 порция
                   .price 
                     .offer 200.00₽
                     p 150.00₽  
@@ -83,193 +50,94 @@ block content
           h2 Популярные блюда
       .row      
         .col-12
-          .tabs
-            .tab  Все категории
-            .tab Салаты
-            .tab  Супы
-            .tab Второе
-            .tab Напитки 
+          .tabs#tabs
+            .tab(onclick="filterSelection('all')")  Все категории
+            .tab(onclick="filterSelection('salat')") Салаты
+            .tab(onclick="filterSelection('soup')")  Супы
+            .tab(onclick="filterSelection('other')") Второе
+            .tab(onclick="filterSelection('drink')") Напитки  
       .row.dish-row
-        .col-4
-          .dish-item
-            .dish-title
-              h4 Салаты
-              h4.bold Греческий
-            img.food-img(src="../media/image/dish2.png", alt="").photo
-            .dish-list-wrap
-              select#dishes
-                option(value="hide") 1 порция  
-                option(value="01") 1 порция
-                option(value="02") 2 порции
-                option(value="03") 3 порции
-                option(value="04") 4 порции
-                option(value="05") 5 порций
-                option(value="06") 6 порций
-                option(value="07") 7 порций
-                option(value="08") 8 порций
-                option(value="09") 9 порций
-                option(value="10") 10 порций
-              button.busket 199.00₽
-        .col-4
-          .dish-item
-            .dish-title
-              h4 Суп
-              h4.bold Солянка
-            img.food-img(src="../media/image/dish2.png", alt="").photo
-            .dish-list-wrap
-              select#dishes
-                option(value="hide") 1 порция  
-                option(value="01") 1 порция
-                option(value="02") 2 порции
-                option(value="03") 3 порции
-                option(value="04") 4 порции
-                option(value="05") 5 порций
-                option(value="06") 6 порций
-                option(value="07") 7 порций
-                option(value="08") 8 порций
-                option(value="09") 9 порций
-                option(value="10") 10 порций
-              button.busket 199.00₽
-        .col-4
-          .dish-item
-            .dish-title
-              h4 Второе
-              h4.bold Паста с лососем
-            img.food-img(src="../media/image/dish2.png", alt="").photo
-            .dish-list-wrap
-              select#dishes
-                option(value="hide") 1 порция  
-                option(value="01") 1 порция
-                option(value="02") 2 порции
-                option(value="03") 3 порции
-                option(value="04") 4 порции
-                option(value="05") 5 порций
-                option(value="06") 6 порций
-                option(value="07") 7 порций
-                option(value="08") 8 порций
-                option(value="09") 9 порций
-                option(value="10") 10 порций
-              button.busket 199.00₽ 
-        .col-4
-          .dish-item
-            .dish-title
-              h4 Салаты
-              h4.bold Греческий
-            img.food-img(src="../media/image/dish2.png", alt="").photo
-            .dish-list-wrap
-              select#dishes
-                option(value="hide") 1 порция  
-                option(value="01") 1 порция
-                option(value="02") 2 порции
-                option(value="03") 3 порции
-                option(value="04") 4 порции
-                option(value="05") 5 порций
-                option(value="06") 6 порций
-                option(value="07") 7 порций
-                option(value="08") 8 порций
-                option(value="09") 9 порций
-                option(value="10") 10 порций
-              button.busket 199.00₽
-        .col-4
-          .dish-item
-            .dish-title
-              h4 Салаты
-              h4.bold Греческий
-            img.food-img(src="../media/image/dish2.png", alt="").photo
-            .dish-list-wrap
-              select#dishes
-                option(value="hide") 1 порция  
-                option(value="01") 1 порция
-                option(value="02") 2 порции
-                option(value="03") 3 порции
-                option(value="04") 4 порции
-                option(value="05") 5 порций
-                option(value="06") 6 порций
-                option(value="07") 7 порций
-                option(value="08") 8 порций
-                option(value="09") 9 порций
-                option(value="10") 10 порций
-              button.busket 199.00₽
-        .col-4
-          .dish-item
-            .dish-title
-              h4 Салаты
-              h4.bold Греческий
-            img.food-img(src="../media/image/dish2.png", alt="").photo
-            .dish-list-wrap
-              select#dishes
-                option(value="hide") 1 порция  
-                option(value="01") 1 порция
-                option(value="02") 2 порции
-                option(value="03") 3 порции
-                option(value="04") 4 порции
-                option(value="05") 5 порций
-                option(value="06") 6 порций
-                option(value="07") 7 порций
-                option(value="08") 8 порций
-                option(value="09") 9 порций
-                option(value="10") 10 порций
-              button.busket 199.00₽ 
-        .col-4
-          .dish-item
-            .dish-title
-              h4 Салаты
-              h4.bold Греческий
-            img.food-img(src="../media/image/dish2.png", alt="").photo
-            .dish-list-wrap
-              select#dishes
-                option(value="hide") 1 порция  
-                option(value="01") 1 порция
-                option(value="02") 2 порции
-                option(value="03") 3 порции
-                option(value="04") 4 порции
-                option(value="05") 5 порций
-                option(value="06") 6 порций
-                option(value="07") 7 порций
-                option(value="08") 8 порций
-                option(value="09") 9 порций
-                option(value="10") 10 порций
-              button.busket 199.00₽
-        .col-4
-          .dish-item
-            .dish-title
-              h4 Салаты
-              h4.bold Греческий
-            img.food-img(src="../media/image/dish2.png", alt="").photo
-            .dish-list-wrap
-              select#dishes
-                option(value="hide") 1 порция  
-                option(value="01") 1 порция
-                option(value="02") 2 порции
-                option(value="03") 3 порции
-                option(value="04") 4 порции
-                option(value="05") 5 порций
-                option(value="06") 6 порций
-                option(value="07") 7 порций
-                option(value="08") 8 порций
-                option(value="09") 9 порций
-                option(value="10") 10 порций
-              button.busket 199.00₽
-        .col-4
-          .dish-item
-            .dish-title
-              h4 Салаты
-              h4.bold Греческий
-            img.food-img(src="../media/image/dish2.png", alt="").photo
-            .dish-list-wrap
-              select#dishes
-                option(value="hide") 1 порция  
-                option(value="01") 1 порция
-                option(value="02") 2 порции
-                option(value="03") 3 порции
-                option(value="04") 4 порции
-                option(value="05") 5 порций
-                option(value="06") 6 порций
-                option(value="07") 7 порций
-                option(value="08") 8 порций
-                option(value="09") 9 порций
-                option(value="10") 10 порций
-              button.busket 199.00₽
+
+        .dish-item.salat
+          .dish-title 
+            h4 Салаты
+            h4.bold Греческий
+          img.food-img(src="../media/image/dish2.png", alt="").photo
+          .dish-list-wrap
+            .select-num 1 порция
+            button.busket 199.00₽
+
+        .dish-item.soup
+          .dish-title
+            h4 Суп
+            h4.bold Солянка
+          img.food-img(src="../media/image/dish3.png", alt="").photo
+          .dish-list-wrap
+            .select-num 1 порция
+            button.busket 199.00₽
+
+        .dish-item.other
+          .dish-title
+            h4 Второе
+            h4.bold Паста с лососем
+          img.food-img(src="../media/image/dish4.png", alt="").photo
+          .dish-list-wrap
+            .select-num 1 порция
+            button.busket 199.00₽ 
+
+        .dish-item.soup
+          .dish-title
+            h4 Суп
+            h4.bold Солянка
+          img.food-img(src="../media/image/dish3.png", alt="").photo
+          .dish-list-wrap
+            .select-num 1 порция
+            button.busket 199.00₽
+
+        .dish-item.salat
+          .dish-title
+            h4 Салаты
+            h4.bold Греческий
+          img.food-img(src="../media/image/dish2.png", alt="").photo
+          .dish-list-wrap
+            .select-num 1 порция
+            button.busket 199.00₽ 
+
+        .dish-item.other
+          .dish-title
+            h4 Второе
+            h4.bold Паста с лососем
+          img.food-img(src="../media/image/dish4.png", alt="").photo
+          .dish-list-wrap
+            .select-num 1 порция
+            button.busket 199.00₽ 
+
+        .dish-item.salat
+          .dish-title
+            h4 Салаты
+            h4.bold Греческий
+          img.food-img(src="../media/image/dish2.png", alt="").photo
+          .dish-list-wrap
+            .select-num 1 порция
+            button.busket 199.00₽
+
+        .dish-item.soup
+          .dish-title
+            h4 Суп
+            h4.bold Солянка
+          img.food-img(src="../media/image/dish3.png", alt="").photo
+          .dish-list-wrap
+            .select-num 1 порция
+            button.busket 199.00₽
+
+        .dish-item.other
+          .dish-title
+            h4 Второе
+            h4.bold Паста с лососем
+          img.food-img(src="../media/image/dish4.png", alt="").photo
+          .dish-list-wrap
+            .select-num 1 порция
+            button.busket 199.00₽
   .about
     .container
       .row
@@ -284,6 +152,7 @@ block content
             .desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.
         .col-6
           .about-photo
+            img(src="../media/icon/big-spot.png", alt="")
             img(src="../media/image/about.png", alt="photo")
       .row.about-row
         .col-6
@@ -292,7 +161,9 @@ block content
             .desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.
         .col-6
           .about-photo
-            img(src="../media/image/about2.png", alt="photo")
+              img(src="../media/icon/big-spot.png", alt="")
+              img(src="../media/image/about2.png", alt="photo") 
+        
 
   .order
     .container
@@ -352,7 +223,7 @@ block content
             img(src="../media/image/pay3.jpg", alt="logo") 
             img(src="../media/image/pay4.png", alt="logo") 
             img(src="../media/image/pay5.png", alt="logo") 
-  
+
     .container
       .row
         .col-12
@@ -364,10 +235,13 @@ block content
               input(type="submit" value="Заказать звонок")
             p Нажимая “Оформить заказ”  вы соглашаетесь с #[a(href="#") Политикой обработки персональных данных]
 
-  include ../modules/modal-menu 
-  include ../modules/item-modal                 
-         
-                          
+  include ../modules/addInBusket-modal
+  include ../modules/item-modal
+  include ../modules/itemInBusket 
+  include ../modules/form_order 
+  include ../modules/success                  
+
+
 
 
 

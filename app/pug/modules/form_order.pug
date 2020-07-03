@@ -1,0 +1,17 @@
+.order-overlay
+  .modal-content
+    .modal-close
+    h3 Оформление заказа
+    form.form-order
+      label(for="name") ФИО
+      input(type="text" id="name" placeholder="Иванов Иван Иванович") 
+      label(for="tel") Номер телефона
+      input(type="text" id="tel" placeholder="8 800 555-35-35")
+      label(for="addres") Куда доставить?
+      input(type="text" id="addres" placeholder="ул. Пушкина, дом 1")
+      label(for="time") Когда доставить?
+      input(type="text" id="time" placeholder="Сегодня, 16:40")
+      .form_bottom
+        p Нажимая “Оформить заказ”  вы соглашаетесь с #[a(href="#") Политикой обработки персональных данных] 
+        input(type="submit" value="Оформить заказ")
+           

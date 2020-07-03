@@ -33,6 +33,10 @@
       cursor: pointer;
     }
 
+    & .tab.active {
+      border-bottom: 2px solid #FC903D;
+    }
+
     & .tab:last-child {
       margin-right: 0;
     }
@@ -50,7 +54,11 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 18px;
-cursor: pointer;
+  display: none;
+  flex: 31%;
+  margin: 0 9px 18px;
+  cursor: pointer;
+
   .dish-title {
     display: flex;
     flex-direction: column;
@@ -94,15 +102,14 @@ cursor: pointer;
     justify-content: space-around;
     align-items: center;
 
-    .select {
+    .select-num {
       flex: 50%;
-      padding: 24px 0;
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
 
-      .select-styled {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 18px;
+      &:after {
+        right: 30px;
       }
     }
 
@@ -145,7 +152,8 @@ cursor: pointer;
 
 
 // item modal
-.dish-overlay {
+.dish-overlay,
+.order-overlay {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
@@ -159,6 +167,7 @@ cursor: pointer;
   z-index: 25;
   padding: 0 50px;
   visibility: hidden;
+
   .modal-content {
     background: #FFFFFF;
     box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.1);
@@ -213,9 +222,10 @@ cursor: pointer;
         display: flex;
         height: 48px;
         justify-content: space-between;
+
         .modal-btn {
           display: flex;
-         
+
           margin-right: 48px;
 
           .count-dish {
@@ -230,7 +240,7 @@ cursor: pointer;
             background-color: transparent;
             padding: 12px 20px;
             border: 1px solid #FC903D;
-            transition: .4s;
+            transition: background-color 1s;
           }
 
           & .count-dish:hover {
@@ -310,4 +320,294 @@ cursor: pointer;
     width: 24px;
     height: 24px;
   }
+}
+
+// small modal add in busket
+.addbusket-modal {
+  width: 100%;
+  max-width: 672px;
+  background-color: #fff;
+  // padding: 12px 24px 12px 12px; 
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  z-index: 25;
+  visibility: hidden;
+
+  .img-container-small {
+    width: 48px;
+    height: 48px;
+    background: #F7F7F7;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    position: relative;
+
+    .small-img {
+      width: 30px;
+      height: 30px;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  .line {}
+
+  .small-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 125%;
+    letter-spacing: -0.01em;
+    color: #62605D;
+    padding: 24px 0;
+    padding-right: 5px;
+
+    span {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 125%;
+      letter-spacing: -0.01em;
+      color: #62605D;
+      margin-right: 5px;
+    }
+  }
+
+  .goPay {
+    background-color: transparent;
+    border: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 125%;
+    text-align: right;
+    letter-spacing: -0.01em;
+    color: #484F8C;
+    padding: 24px;
+    border-left: 1px solid #F0EEEB;
+    text-align: center;
+  }
+}
+
+
+// modal small in busket
+.inbusket {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #fff;
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;  
+  
+  img {
+    width: 24px;
+    filter: invert(0.6);
+    height: 24px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .numberOfItem {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: #FC903D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -5px;
+    right: -5px;
+    border-radius: 50%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 125%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+  }
+}
+
+// modal form order
+.order-overlay {
+
+  .modal-content{
+    padding: 64px;
+    h3 {
+      font-style: normal;
+      font-weight: 900;
+      font-size: 48px;
+      line-height: 100%;
+      font-family: Mixta Didone Alt;
+      color: #0B1828;
+      margin-bottom: 40px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      label {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 125%;
+        letter-spacing: -0.01em;
+        color: #0B1828;
+        margin-bottom: 8px; 
+      }
+      input {
+        border: 1px solid #F0EEEB;
+        border-radius: 10px; 
+        padding: 14px 13px; 
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 125%;
+        letter-spacing: -0.01em;
+        color: rgba(98, 96, 93, 0.6);
+        margin-bottom: 30px;
+        max-width: 592px;
+        &::placeholder {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 125%;
+          letter-spacing: -0.01em;
+          color: rgba(98, 96, 93, 0.6);
+        }
+      }
+      .form_bottom {
+        display: flex;
+        margin-top: 64px;
+        p {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 140%;
+          letter-spacing: -0.01em;
+          color: rgba(98, 96, 93, 0.8);
+          margin-right: 32px;
+          max-width: 372px;
+        
+          a {
+            text-decoration: underline;
+            font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 140%;
+          letter-spacing: -0.01em;
+          color: rgba(98, 96, 93, 0.8);
+          }
+        }
+        input {
+          background: #484F8C;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 125%;
+          text-align: right;
+          letter-spacing: -0.01em;
+          color: #FFFFFF;
+          margin-bottom: 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
+
+// success   modal
+.success {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(32px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 25;
+  padding: 0 50px;
+ .success-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFFFF;
+box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.1);
+border-radius: 20px;
+padding: 64px 88px;
+.imgOk {
+  width: 96px;
+  height: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+  background: #3CB07D;
+  &:after {
+    content: "";
+    background-image: url(../media/icon/ok.svg);
+    background-position: center;
+    background-size: cover;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+  }
+}
+   h3 {
+    font-family: Mixta Didone Alt;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 100%;
+    text-align: center;
+    color: #0B1828;
+    margin-bottom: 24px;
+   }
+   p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #62605D;
+    margin-bottom: 24px;
+    max-width: 544px;
+   }
+   a {
+    background: #484F8C;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: right;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    margin-bottom: 0;
+    cursor: pointer;
+    padding: 17px 24px;
+    border-radius: 10px; 
+   }
+ }
 }

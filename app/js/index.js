@@ -1,5 +1,6 @@
 import 'normalize.css';
-import './select-list';
+import './form';
+
 
 $(document).ready((e) => {
 
@@ -13,10 +14,12 @@ $(document).ready((e) => {
       animateOut: 'fadeOut',
       animateIn: 'fadeIn'
      
-      // smartSpeed:450
+      // smartSpeed:450 
       
   });
 
+
+  // open menu
   $('.menu').on('click', function(){
     $(this).children('.romb').toggleClass('active'); 
     $('.modal-menu').toggleClass('active');
@@ -25,12 +28,12 @@ $(document).ready((e) => {
   });
 
 
-  // button on modal item
+  // select active button on modal item
   $('.count-dish').on('click', function(){
     $(this).toggleClass('active');
   });
 
-  // click on card food
+  // card food modal
   $('.dish-item').on('click', function(){
       const current = $(this);
 
@@ -54,6 +57,7 @@ $(document).ready((e) => {
 
   $('.modal-close').on('click', function () {
     $('.dish-overlay').css('visibility', 'hidden');
+    $('.order-overlay').css('visibility', 'hidden');
     $('body').css({
       'overflow': 'visible',
       'position': 'relative',
@@ -61,27 +65,55 @@ $(document).ready((e) => {
     });
   });
 
+ // modal add on busket
+  $('.addBusket').on('click', function(){ 
+      $('.dish-overlay').css('display', 'none');
+
+      $('.addbusket-modal').css('visibility', 'visible');
+
+      setTimeout(function() {
+        $('.addbusket-modal').css('visibility', 'hidden'); 
+        $('.inbusket').css('display', 'flex'); 
+    }, 4000);
+  });
+
+  $('.inbusket').on('click', function() {
+      $(this).css('display', 'none');
+      $('.item-in-busket').css('display', 'block');
+  });  
+  
+  
+  $('.contine').on('click', function(){
+    $('.item-in-busket').css('display', 'none');
+
+    $('.order-overlay').css('visibility', 'visible');
+  });
+
 });
 
 
-$(document).mouseup(function(e){
-  let div = $('.modal-menu, .menu , .romb');
-  if(!div.is(e.target)
-  && div.has(e.target).length === 0) {
-    div.removeClass('active');
-  }
-});
 
-// $(document).on('click', function(){
-//   let modal = $('.modal-content');
-//   let btn = $('.dish-item');
+// close modal
 
-//   if(!btn.is(e.target) && btn.has(e.target).length === 0) {
-//     if(!modal.is(e.target) && modal.has(e.target).length === 0) {
-//       $('.dish-overlay').css('visibility', 'hidden');
-//       }
-//     }   
+// $(document).mouseup(function(e){
+//   let div = $('.modal-menu, .menu , .romb');
+//   if(!div.is(e.target)
+//   && div.has(e.target).length === 0) {
+//     div.removeClass('active'); 
+//   }
 // });
+
+$(document).on('click', function(e){
+  let modal = $('.modal-content');
+  let btn = $('.dish-item, .contine');
+
+  if(!btn.is(e.target) && btn.has(e.target).length === 0) {
+    if(!modal.is(e.target) && modal.has(e.target).length === 0) {
+      $('.dish-overlay').css('visibility', 'hidden');
+      $('.order-overlay').css('visibility', 'hidden');
+      }
+    }   
+});
 
 $(window).resize(() => {
 

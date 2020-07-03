@@ -1,0 +1,179 @@
+.item-in-busket {
+  background: #FFFFFF;
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 24px 0 16px;
+  min-width: 439px;
+  z-index: 25;
+  display: none;
+  .itemInBusket-title {
+    padding-bottom: 23px;
+    border-bottom: 1px solid #F0EEEB;
+    margin-bottom: 24px;
+
+    h3 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 125%;
+      letter-spacing: -0.01em;
+      color: #0B1828;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+
+  .itemInBusket-body {
+    display: flex;
+    flex-direction: column;
+    padding-left: 24px;
+    padding-right: 24px;
+    min-height: 350px;
+    .item {
+      display: flex;
+      margin-bottom: 20px;
+      align-items: center;
+      .img-container {
+        background: #F7F7F7;
+        border-radius: 10px;
+        height: 48px;
+        width: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 16px;
+
+        img {
+          width: 33px;
+          height: 33px;
+        }
+      }
+
+      .titles {
+        display: flex;
+        flex-direction: column;
+        margin-right: 32px;
+
+        .names {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 125%;
+          letter-spacing: -0.01em;
+          color: #0B1828;
+          margin-bottom: 4px;
+        }
+
+        .grams {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 125%;
+          letter-spacing: -0.01em;
+          color: #62605D;
+        }
+      }
+
+      .count-wrap {
+        display: flex;
+        border: 1px solid #F0EEEB;
+        border-radius: 10px;
+        height: 32px;
+        align-items: center;
+        justify-content: center;
+        margin-right: 16px;
+        .plus {
+          color: rgba(11, 24, 40, 0.4);
+          background-image: url(../../media/icon/plus.svg);
+          background-position: center;
+          background-size: cover;
+          width: 12px;
+          height: 12px;
+          margin: 10px;
+          cursor: pointer; 
+
+        }
+
+        .minus {
+          color: rgba(11, 24, 40, 0.4);
+          background-image: url(../media/icon/minus.svg);
+          background-position: center;
+          background-size: cover;
+          width: 12px;
+          height: 2px;
+          margin: 10px;
+          cursor: pointer;
+
+        }
+
+        .num {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 125%;
+          letter-spacing: -0.01em;
+          color: #0B1828;
+          padding-left: 12px;
+          padding-right: 12px;
+          border-left: 1px solid #F0EEEB;
+          border-right: 1px solid #F0EEEB;
+        }
+      }
+      .dlt-item {
+        background-image: url(../media/icon/dlt.svg);
+        background-position: center;
+          background-size: cover;
+          width: 24px;
+          height: 24px;
+          object-position: center;
+          object-fit: cover;
+          cursor: pointer;
+      }
+    }
+  }
+  .itemInBusket-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 14px;
+    border-top: 1px solid #F0EEEB;
+    button {
+      background: #484F8C;
+          border-radius: 10px;
+          padding: 15px 16px;
+          font-style: normal; 
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+          text-align: right;
+          letter-spacing: -0.01em;
+          color: #FFFFFF;
+          border: none;
+    }
+    .price-wrap {
+      &:first-child {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 125%;
+        letter-spacing: -0.01em;
+        color: #62605D;
+        margin-bottom: 4px;
+      }
+      .price {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 125%;
+        letter-spacing: -0.01em;
+        color: #0B1828;
+      }
+    }
+    
+  }
+}
