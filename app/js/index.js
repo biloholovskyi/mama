@@ -4,6 +4,15 @@ import './form';
 
 $(document).ready((e) => {
 
+  //anhors
+  $('.anhors').on('click', function(){
+    event.preventDefault();
+    let id  = $(this).attr('href'),
+        top = $(id).offset().top;
+        
+     $('body, html').animate({scrollTop: top}, 800);    
+  });
+
     $('#main-slider').owlCarousel({
       
       loop:true,
@@ -32,8 +41,13 @@ $(document).ready((e) => {
 
   // select active button on modal item
   $('.count-dish').on('click', function(){
-    $(this).toggleClass('active');
+    if(!$(this).hasClass('active')){
+      $(this).siblings().removeClass('active'); 
+      $(this).addClass('active'); 
+    }
   });
+
+  
 
   // card food modal
   $('.dish-item').on('click', function(){
@@ -48,6 +62,12 @@ $(document).ready((e) => {
       $('.modal-info h4').html(title);
       $('.modal-info h3').html(title2);
       $('.info-dish .price').html(price);
+
+
+      $('.small-img').css('background-image', 'url(' + img + ')');
+      $('.addbusket-modal .small-title').find('.kind').html(title);
+      $('.addbusket-modal .small-title').find('.name').html(title2);
+  
 
       $('.dish-overlay').css('visibility', 'visible');
       $('body').css({
@@ -69,15 +89,17 @@ $(document).ready((e) => {
 
  // modal add on busket
   $('.addBusket').on('click', function(){ 
-      $('.dish-overlay').css('display', 'none');
+      $('.dish-overlay').css('visibility', 'hidden');
 
-      $('.addbusket-modal').css('visibility', 'visible');
+      $('.addbusket-modal').css('visibility', 'visible'); 
 
       setTimeout(function() {
         $('.addbusket-modal').css('visibility', 'hidden'); 
         $('.inbusket').css('display', 'flex'); 
     }, 4000);
   });
+
+
 
   $('.inbusket').on('click', function() {
       $(this).css('display', 'none');
@@ -91,19 +113,32 @@ $(document).ready((e) => {
     $('.order-overlay').css('visibility', 'visible');
   });
 
-});
 
+
+
+});
+ // active tab 
+ $('#tabs .tab').on('click', function(){ 
+  if(!$(this).hasClass('active')){
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+  }
+}); 
+
+
+ 
 
 
 // close modal
 
-// $(document).mouseup(function(e){
-//   let div = $('.modal-menu, .menu , .romb');
-//   if(!div.is(e.target)
-//   && div.has(e.target).length === 0) {
-//     div.removeClass('active'); 
-//   }
-// });
+$(document).mouseup(function(e){
+  let div = $('.modal-menu, .menu , .romb');
+  if(!div.is(e.target)
+  && div.has(e.target).length === 0) {
+    div.removeClass('active'); 
+    $('body').removeClass('active');
+  }
+});
 
 $(document).on('click', function(e){
   let modal = $('.modal-content');

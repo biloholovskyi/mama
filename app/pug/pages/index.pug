@@ -17,7 +17,7 @@ block content
                   .select-num 1 порция
                   .price 
                     .offer 199.00₽ 
-                    p 123.00₽  
+                    p 123.00₽   
                   button.busket
               img.slider-img(src="../media/image/dish.jpg", alt="image")
             .item
@@ -51,7 +51,7 @@ block content
       .row      
         .col-12
           .tabs#tabs
-            .tab(onclick="filterSelection('all')")  Все категории
+            .tab.active(onclick="filterSelection('all')")  Все #[span категории]
             .tab(onclick="filterSelection('salat')") Салаты
             .tab(onclick="filterSelection('soup')")  Супы
             .tab(onclick="filterSelection('other')") Второе
@@ -61,7 +61,7 @@ block content
         .dish-item.salat
           .dish-title 
             h4 Салаты
-            h4.bold Греческий
+            h4.bold Греческий 
           img.food-img(src="../media/image/dish2.png", alt="").photo
           .dish-list-wrap
             .select-num 1 порция
@@ -138,7 +138,7 @@ block content
           .dish-list-wrap
             .select-num 1 порция
             button.busket 199.00₽
-  .about
+  .about#about
     .container
       .row
         .col-12
@@ -146,20 +146,20 @@ block content
             h2 О нас
             p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium
       .row.about-row
-        .col-6
+        .col-12.col-lg-6.col-md-12.col-sm-12.col-12
           .about-info
             .about-name Галина Сергеевна Васнецова
             .desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.
-        .col-6
+        .col-12.col-lg-6.col-md-12.col-sm-12.col-12
           .about-photo
             img(src="../media/icon/big-spot.png", alt="")
             img(src="../media/image/about.png", alt="photo")
       .row.about-row
-        .col-6
+        .col-12.col-lg-6.col-md-12.col-sm-12.col-12
           .about-info
             .about-name Илья Васильевич Полежайкин
             .desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.
-        .col-6
+        .col-12.col-lg-6.col-md-12.col-sm-12.col-12
           .about-photo
               img(src="../media/icon/big-spot.png", alt="")
               img(src="../media/image/about2.png", alt="photo") 
@@ -171,7 +171,7 @@ block content
         .col-12
           h2 Как заказать? 
       .row
-        .col-3
+        .col-6.col-lg-3.col-md-6.col-sm-6
           .order-text
             .order-item
               img(src="../media/icon/order1.svg", alt="icon")
@@ -181,9 +181,9 @@ block content
               .img-item 3
               h3 Lorem ipsum dolor sit
               p Donec ante ex, rutrum in tempor quis, fringilla sed ex
-        .col-6
+        .col-12.col-lg-6.col-md-12.col-sm-12.order-last
           img.order-img(src="../media/image/2.png", alt="image") 
-        .col-3
+        .col-6.col-lg-3.col-md-6.col-sm-6.order-lg-last
           .order-text
             .order-item
               .img-item 2
@@ -194,23 +194,23 @@ block content
               .img-item 4
               h3 Suspendisse lacinia
               p Lorem ipsum dolor sit amet, consectetur adipiscing elit 
-  .payment
+  .payment#pay
     .container
       .row
         .col-12
-          h2 Как оплатить?
+          h2 Как оплатить? 
       .row
-        .col-4
+        .col-12.col-lg-4.col-md-4
           .pay-item
             .img-item 1
             h3 Lorem ipsum dolor sit
             p Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel
-        .col-4
+        .col-12.col-lg-4.col-md-4
           .pay-item
             .img-item 2
             h3 Lorem ipsum dolor sit
             p Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel
-        .col-4
+        .col-12.col-lg-4.col-md-4
           .pay-item
             .img-item 3
             h3 Lorem ipsum dolor sit

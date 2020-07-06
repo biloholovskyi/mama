@@ -359,12 +359,12 @@
     }
   }
 
-  .line {}
+  
 
   .small-title {
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 125%;
     letter-spacing: -0.01em;
     color: #62605D;
@@ -374,7 +374,7 @@
     span {
       font-style: normal;
       font-weight: 500;
-      font-size: 18px;
+      font-size: 15px;
       line-height: 125%;
       letter-spacing: -0.01em;
       color: #62605D;
@@ -564,6 +564,7 @@ padding: 64px 88px;
   border-radius: 50%;
   position: relative;
   background: #3CB07D;
+  margin-bottom: 40px;
   &:after {
     content: "";
     background-image: url(../media/icon/ok.svg);

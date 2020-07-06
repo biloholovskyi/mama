@@ -1,0 +1,47 @@
+@media screen and (max-width: 767px) {
+  .main-slider {
+    #main-slider {
+      padding-bottom: 30px; 
+      .slider-info {
+        padding-left: 0;
+        text-align: center;
+        h1 {
+          font-size: 70px;  
+        }
+        .desc { 
+          font-size: 20px;
+        }
+      }
+      .owl-nav {
+        top: unset;
+        bottom: 0;
+        transform: translateY(100%) translateX(-50%);
+        width: 200px!important; 
+      }
+    }
+  } 
+  .popular-dishes {
+    h2 {
+      font-size: 60px;
+    }
+    .tabs {
+      .tab {
+        font-size: 15px; 
+      }
+    }
+  }
+  .payment {
+    padding-top: 50px;
+    h2 {
+      font-size: 60px; 
+    }
+    .payment-method {
+      
+      
+    }
+  }
+ .callback {
+  padding: 25px 32px;
+  text-align: center;
+ }
+}

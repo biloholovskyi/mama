@@ -15,7 +15,7 @@
   // align-items: center;
   justify-content: center;
   padding-top: 250px;
-
+  padding-bottom: 50px;
   &::after {
     content: "";
     background-image: url(../media/icon/small-spot.jpg);
@@ -185,6 +185,9 @@
     max-height: 634px;
 
     .order-item {
+      img {
+        margin-bottom: 20px;
+      }
       h3 {
         font-style: normal;
         font-weight: 600;
