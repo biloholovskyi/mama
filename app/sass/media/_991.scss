@@ -80,4 +80,35 @@
       display: block;
     }
   }
-}
+  //header
+  .header {
+    .header-contact { 
+      .phone {
+       display: none;  
+        }
+      }
+    }
+  
+    .dish-overlay {
+      .modal-content {
+        .modal-info {
+          .modal-btns {
+            .modal-btn {
+              .count-dish {
+                padding: 12px 15px;
+              }
+            }
+            .info-dish {
+              p:last-child {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+
+

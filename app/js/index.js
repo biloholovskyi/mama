@@ -25,7 +25,6 @@ $(document).ready((e) => {
       animateOut: 'fadeOut',
       animateIn: 'fadeIn'
      
-      // smartSpeed:450 
       
   });
 
@@ -34,8 +33,14 @@ $(document).ready((e) => {
   $('.menu').on('click', function(){
     $(this).children('.romb').toggleClass('active'); 
     $('.modal-menu').toggleClass('active');
-    $('body').toggleClass('active');
+    // $('body').toggleClass('active');
+    $('.header').toggleClass('active'); 
   
+  });
+
+  // close menu on responsive
+  $('.modal-close2').on('click', function(){ 
+    $('.modal-menu').toggleClass('active');
   });
 
 
@@ -113,7 +118,11 @@ $(document).ready((e) => {
     $('.order-overlay').css('visibility', 'visible');
   });
 
+// adaptive menu 
 
+$('.burger').on('click', function(){
+  $('.header').toggleClass('active');
+});
 
 
 });
@@ -141,13 +150,14 @@ $(document).mouseup(function(e){
 });
 
 $(document).on('click', function(e){
-  let modal = $('.modal-content');
-  let btn = $('.dish-item, .contine');
+  let modal = $('.modal-content, .item-in-busket');
+  let btn = $('.dish-item, .contine, .inbusket');
 
   if(!btn.is(e.target) && btn.has(e.target).length === 0) {
     if(!modal.is(e.target) && modal.has(e.target).length === 0) {
       $('.dish-overlay').css('visibility', 'hidden');
       $('.order-overlay').css('visibility', 'hidden');
+      $('.item-in-busket').css('display', 'none');
       }
     }   
 });

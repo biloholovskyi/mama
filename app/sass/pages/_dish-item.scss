@@ -341,6 +341,7 @@
   visibility: hidden;
 
   .img-container-small {
+    min-width: 48px;
     width: 48px;
     height: 48px;
     background: #F7F7F7;
@@ -368,8 +369,8 @@
     line-height: 125%;
     letter-spacing: -0.01em;
     color: #62605D;
-    padding: 24px 0;
-    padding-right: 5px;
+    padding: 24px 5px;
+    
 
     span {
       font-style: normal;

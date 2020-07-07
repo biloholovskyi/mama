@@ -23,4 +23,15 @@
       width: 750px;
     }
   }
+
+  // header
+  .header {
+    .header-contact {
+      .phone {
+        & a:last-child {
+          display: none;
+        }
+      }
+    }
+  }
 }
