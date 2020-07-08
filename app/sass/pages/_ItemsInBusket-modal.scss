@@ -8,7 +8,20 @@
   padding: 24px 0 16px;
   min-width: 439px;
   z-index: 25;
+  flex-direction: column;
   display: none;
+  .modal-close3 {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-image: url(../media/icon/close.svg);
+    background-position: center;
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    display: none;
+  }
   .itemInBusket-title {
     padding-bottom: 23px;
     border-bottom: 1px solid #F0EEEB;

@@ -33,7 +33,7 @@ $(document).ready((e) => {
   $('.menu').on('click', function(){
     $(this).children('.romb').toggleClass('active'); 
     $('.modal-menu').toggleClass('active');
-    // $('body').toggleClass('active');
+    $('body').toggleClass('active');
     $('.header').toggleClass('active'); 
   
   });
@@ -92,6 +92,11 @@ $(document).ready((e) => {
     });
   });
 
+ // close modal busket
+ $('.modal-close3').on('click', function () { 
+  $('.item-in-busket').css('display', 'none'); 
+});
+
  // modal add on busket
   $('.addBusket').on('click', function(){ 
       $('.dish-overlay').css('visibility', 'hidden');
@@ -106,9 +111,9 @@ $(document).ready((e) => {
 
 
 
-  $('.inbusket').on('click', function() {
+  $('.inbusket').on('click', function() { 
       $(this).css('display', 'none');
-      $('.item-in-busket').css('display', 'block');
+      $('.item-in-busket').css('display', 'flex');
   });  
   
   
@@ -132,6 +137,8 @@ $('.burger').on('click', function(){
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
   }
+
+ 
 }); 
 
 
