@@ -21,7 +21,7 @@
           </div>
           <div class="col-12 col-md-6 col-sm-6 col-lg-3">
             <div class="info">
-              <div class="footer-title">Информация</div><a href="#">Оплата и доставка</a><a href="<?php the_field('politics'); ?>" target="_blank" download>Политика конфиденциальности </a>
+              <div class="footer-title">Информация</div><a href="#pay">Оплата и доставка</a><a href="<?php the_field('politics'); ?>" target="_blank" download>Политика конфиденциальности </a>
             </div>
           </div>
           <div class="col-12 col-md-6 col-sm-6 col-lg-3">

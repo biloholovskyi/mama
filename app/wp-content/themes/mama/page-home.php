@@ -65,17 +65,36 @@ Template Name: Home
           </div>
         </div>
         <div class="row dish-row">
-          <div class="dish-item salat">
+
+        <?php
+        $args = array(
+          'numberposts' => -1, // если -1 то выводит все
+          'orderby' => 'date',
+          'order' => 'DESC',
+          'post_type' => 'items', // тип поста
+          'suppress_filters' => true,
+        );
+
+        $posts = get_posts($args);
+
+        foreach ($posts as $post) {
+          setup_postdata($post);
+          ?>
+          <div class="dish-item <?php the_field('category'); ?>">
             <div class="dish-title"> 
-              <h4>Салаты</h4>
-              <h4 class="bold">Греческий </h4>
-            </div><img class="food-img photo" src="../media/image/dish2.png" alt="">
+              <h4><?php the_title(); ?></h4>
+              <h4 class="bold"><?php the_field('item__name'); ?></h4>
+            </div><img class="food-img photo" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="">
             <div class="dish-list-wrap">
               <div class="select-num">1 порция</div>
-              <button class="busket">199.00₽</button>
+              <button class="busket"><?php the_field('item__price'); ?>₽</button>
             </div>
           </div>
-          <div class="dish-item soup">
+          <?php
+            }
+            wp_reset_postdata(); // сброс
+            ?>
+          <!-- <div class="dish-item soup">
             <div class="dish-title">
               <h4>Суп</h4>
               <h4 class="bold">Солянка</h4>
@@ -154,7 +173,7 @@ Template Name: Home
               <div class="select-num">1 порция</div>
               <button class="busket">199.00₽</button>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
