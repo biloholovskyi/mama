@@ -29,7 +29,7 @@
         <div class="social"><a href="<?php the_field('telegram'); ?>" target="_blank" ><img src="<?php echo get_template_directory_uri(); ?>/media/icon/twit.svg" alt="icon"></a><a href="<?php the_field('whatApp'); ?>"  target="_blank">        <img src="<?php echo get_template_directory_uri(); ?>/media/icon/wApp.svg" alt="icon"></a></div>
       </div>
     </header>
-    <div class="mobile-menu"><a href="/"><img class="mobile-logo" src="../media/icon/logo.svg" alt="logo"></a>
+    <div class="mobile-menu"><a href="/"><img class="mobile-logo" src="<?php echo get_template_directory_uri(); ?>/media/icon/logo.svg" alt="logo"></a>
       <div class="mobile-nav"> 
         <div class="burger">
           <div class="burder-item"></div>
@@ -42,20 +42,26 @@
     <div class="menu-overlay">
       <div class="modal-menu">
         <div class="modal-close2"></div>
-        <div class="modal-item"><img src="../media/image/modal1.svg" alt="image">
-          <h4>Салаты</h4>
+        <?php
+        $args = array(
+          'numberposts' => -1, // если -1 то выводит все
+          'orderby' => 'date',
+          'order' => 'ASC',
+          'post_type' => 'category', // тип поста
+          'suppress_filters' => true,
+        );
+
+        $posts = get_posts($args);
+
+        foreach ($posts as $post) {
+          setup_postdata($post);
+          ?>
+        <div class="modal-item"><img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="image">
+          <h4><?php the_title(); ?></h4>
         </div>
-        <div class="modal-item"><img src="../media/icon/drink.png" alt="image">
-          <h4>Напитки</h4>
-        </div>
-        <div class="modal-item"><img src="../media/image/modal2.svg" alt="image">
-          <h4>Супы</h4>
-        </div>
-        <div class="modal-item"><img src="../media/icon/second.png" alt="image">
-          <h4>Второе</h4>
-        </div>
-        <div class="modal-item"><img src="../media/icon/family.png" alt="image">
-          <h4>Семейный ужин        </h4>
-        </div>
+        <?php
+          }
+          wp_reset_postdata(); // сброс
+          ?>
       </div>
     </div>
