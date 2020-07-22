@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-4-grid@3.4.0/css/grid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>MAMA</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content"><a href="/"><img class="logo" src="../media/icon/logo.svg" alt="logo"></a>
+        <div class="header-nav">
+          <ul>
+            <li>
+              <button class="menu">Меню<img src="../media/icon/logo-menu.svg" alt="logo">
+                <div class="romb"></div>
+              </button>
+            </li>
+            <li><a class="anhors" href="#about">О нас</a></li>
+            <li><a class="anhors" href="#pay">Оплата и доставка </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-contact">
+        <div class="phone"><a href="tel:+7 (843) 276-66-76">+7 (843) 276-66-76<img src="../media/icon/tel.svg" alt="icon"></a><a class="anhors" href="#callback">Вам перезвонить?</a></div>
+        <div class="social"><a href="#"><img src="../media/icon/twit.svg" alt="icon"></a><a href="#">        <img src="../media/icon/wApp.svg" alt="icon"></a></div>
+      </div>
+    </header>
+    <div class="mobile-menu"><a href="/"><img class="mobile-logo" src="../media/icon/logo.svg" alt="logo"></a>
+      <div class="mobile-nav"> 
+        <div class="burger">
+          <div class="burder-item"></div>
+          <div class="burder-item"></div>
+          <div class="burder-item"></div>
+        </div>
+        <button class="busket">   </button>
+      </div>
+    </div>
+    <div class="menu-overlay">
+      <div class="modal-menu">
+        <div class="modal-close2"></div>
+        <div class="modal-item"><img src="../media/image/modal1.svg" alt="image">
+          <h4>Салаты</h4>
+        </div>
+        <div class="modal-item"><img src="../media/icon/drink.png" alt="image">
+          <h4>Напитки</h4>
+        </div>
+        <div class="modal-item"><img src="../media/image/modal2.svg" alt="image">
+          <h4>Супы</h4>
+        </div>
+        <div class="modal-item"><img src="../media/icon/second.png" alt="image">
+          <h4>Второе</h4>
+        </div>
+        <div class="modal-item"><img src="../media/icon/family.png" alt="image">
+          <h4>Семейный ужин        </h4>
+        </div>
+      </div>
+    </div>
+    <div class="main-slider">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="owl-carousel owl-theme" id="main-slider">
+              <div class="item">
+                <div class="slider-info">
+                  <h1>Паста <br>с лососем</h1>
+                  <p class="desc">Курица, лапша яичная, бульон куриный, морковь, лук </p>
+                  <div class="count-list-wrap">
+                    <div class="select-num">1 порция</div>
+                    <div class="price"> 
+                      <div class="offer">199.00₽ </div>
+                      <p>123.00₽   </p>
+                    </div>
+                    <button class="busket"></button>
+                  </div>
+                </div><img class="slider-img" src="../media/image/dish.jpg" alt="image">
+              </div>
+              <div class="item">
+                <div class="slider-info">
+                  <h1>Салат <br>Греческий</h1>
+                  <p class="desc">лапша яичная,  морковь, лук </p>
+                  <div class="count-list-wrap">
+                    <div class="select-num">1 порция</div>
+                    <div class="price"> 
+                      <div class="offer">169.00₽</div>
+                      <p>223.00₽  </p>
+                    </div>
+                    <button class="busket"></button>
+                  </div>
+                </div><img class="slider-img" src="../media/image/dish2.png" alt="image">
+              </div>
+              <div class="item">
+                <div class="slider-info">
+                  <h1>Солянка</h1>
+                  <p class="desc">бульон куриный, морковь, лук </p>
+                  <div class="count-list-wrap">
+                    <div class="select-num">1 порция</div>
+                    <div class="price"> 
+                      <div class="offer">200.00₽</div>
+                      <p>150.00₽  </p>
+                    </div>
+                    <button class="busket"></button>
+                  </div>
+                </div><img class="slider-img" src="../media/image/dish.jpg" alt="image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popular-dishes">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Популярные блюда</h2>
+          </div>
+        </div>
+        <div class="row">     
+          <div class="col-12">
+            <div class="tabs" id="tabs">
+              <div class="tab active" onclick="filterSelection('all')"> Все <span>категории</span></div>
+              <div class="tab" onclick="filterSelection('salat')">Салаты</div>
+              <div class="tab" onclick="filterSelection('soup')"> Супы</div>
+              <div class="tab" onclick="filterSelection('other')">Второе</div>
+              <div class="tab" onclick="filterSelection('drink')">Напитки  </div>
+            </div>
+          </div>
+        </div>
+        <div class="row dish-row">
+          <div class="dish-item salat">
+            <div class="dish-title"> 
+              <h4>Салаты</h4>
+              <h4 class="bold">Греческий </h4>
+            </div><img class="food-img photo" src="../media/image/dish2.png" alt="">
+            <div class="dish-list-wrap">
+              <div class="select-num">1 порция</div>
+              <button class="busket">199.00₽</button>
+            </div>
+          </div>
+          <div class="dish-item soup">
+            <div class="dish-title">
+              <h4>Суп</h4>
+              <h4 class="bold">Солянка</h4>
+            </div><img class="food-img photo" src="../media/image/dish3.png" alt="">
+            <div class="dish-list-wrap">
+              <div class="select-num">1 порция</div>
+              <button class="busket">199.00₽</button>
+            </div>
+          </div>
+          <div class="dish-item other">
+            <div class="dish-title">
+              <h4>Второе</h4>
+              <h4 class="bold">Паста с лососем</h4>
+            </div><img class="food-img photo" src="../media/image/dish4.png" alt="">
+            <div class="dish-list-wrap">
+              <div class="select-num">1 порция</div>
+              <button class="busket">199.00₽ </button>
+            </div>
+          </div>
+          <div class="dish-item soup">
+            <div class="dish-title">
+              <h4>Суп</h4>
+              <h4 class="bold">Солянка</h4>
+            </div><img class="food-img photo" src="../media/image/dish3.png" alt="">
+            <div class="dish-list-wrap">
+              <div class="select-num">1 порция</div>
+              <button class="busket">199.00₽</button>
+            </div>
+          </div>
+          <div class="dish-item salat">
+            <div class="dish-title">
+              <h4>Салаты</h4>
+              <h4 class="bold">Греческий</h4>
+            </div><img class="food-img photo" src="../media/image/dish2.png" alt="">
+            <div class="dish-list-wrap">
+              <div class="select-num">1 порция</div>
+              <button class="busket">199.00₽ </button>
+            </div>
+          </div>
+          <div class="dish-item other">
+            <div class="dish-title">
+              <h4>Второе</h4>
+              <h4 class="bold">Паста с лососем</h4>
+            </div><img class="food-img photo" src="../media/image/dish4.png" alt="">
+            <div class="dish-list-wrap">
+              <div class="select-num">1 порция</div>
+              <button class="busket">199.00₽ </button>
+            </div>
+          </div>
+          <div class="dish-item salat">
+            <div class="dish-title">
+              <h4>Салаты</h4>
+              <h4 class="bold">Греческий</h4>
+            </div><img class="food-img photo" src="../media/image/dish2.png" alt="">
+            <div class="dish-list-wrap">
+              <div class="select-num">1 порция</div>
+              <button class="busket">199.00₽</button>
+            </div>
+          </div>
+          <div class="dish-item soup">
+            <div class="dish-title">
+              <h4>Суп</h4>
+              <h4 class="bold">Солянка</h4>
+            </div><img class="food-img photo" src="../media/image/dish3.png" alt="">
+            <div class="dish-list-wrap">
+              <div class="select-num">1 порция</div>
+              <button class="busket">199.00₽</button>
+            </div>
+          </div>
+          <div class="dish-item other">
+            <div class="dish-title">
+              <h4>Второе</h4>
+              <h4 class="bold">Паста с лососем</h4>
+            </div><img class="food-img photo" src="../media/image/dish4.png" alt="">
+            <div class="dish-list-wrap">
+              <div class="select-num">1 порция</div>
+              <button class="busket">199.00₽</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="about-title">
+              <h2>О нас</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium</p>
+            </div>
+          </div>
+        </div>
+        <div class="row about-row">
+          <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="about-info">
+              <div class="about-name">Галина Сергеевна Васнецова</div>
+              <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.</div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="about-photo"><img src="../media/icon/big-spot.png" alt=""><img src="../media/image/about.png" alt="photo"></div>
+          </div>
+        </div>
+        <div class="row about-row">
+          <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="about-info">
+              <div class="about-name">Илья Васильевич Полежайкин</div>
+              <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.</div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="about-photo"><img src="../media/icon/big-spot.png" alt=""><img src="../media/image/about2.png" alt="photo"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Как заказать? </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 col-lg-3 col-md-6 col-sm-6">
+            <div class="order-text">
+              <div class="order-item"><img src="../media/icon/order1.svg" alt="icon">
+                <h3>Lorem ipsum dolor sit</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              </div>
+              <div class="order-item">
+                <div class="img-item">3</div>
+                <h3>Lorem ipsum dolor sit</h3>
+                <p>Donec ante ex, rutrum in tempor quis, fringilla sed ex</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 col-md-12 col-sm-12 order-last"><img class="order-img" src="../media/image/2.png" alt="image"></div>
+          <div class="col-6 col-lg-3 col-md-6 col-sm-6 order-lg-last">
+            <div class="order-text">
+              <div class="order-item">
+                <div class="img-item">2</div>
+                <h3>Lorem ipsum dolor sit</h3>
+                <p>Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel</p>
+              </div>
+              <div class="order-item">
+                <div class="img-item">4</div>
+                <h3>Suspendisse lacinia</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="payment" id="pay">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Как оплатить? </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-4 col-md-4">
+            <div class="pay-item">
+              <div class="img-item">1</div>
+              <h3>Lorem ipsum dolor sit</h3>
+              <p>Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 col-md-4">
+            <div class="pay-item">
+              <div class="img-item">2</div>
+              <h3>Lorem ipsum dolor sit</h3>
+              <p>Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 col-md-4">
+            <div class="pay-item">
+              <div class="img-item">3</div>
+              <h3>Lorem ipsum dolor sit</h3>
+              <p>Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel  </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="payment-method"><img src="../media/image/pay.jpg" alt="logo"><img src="../media/image/pay2.jpg" alt="logo"><img src="../media/image/pay3.jpg" alt="logo"><img src="../media/image/pay4.png" alt="logo"><img src="../media/image/pay5.png" alt="logo"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="callback" id="callback">
+              <h3>Вам перезвонить?</h3>
+              <h4>Phasellus aliquam, est a semper dignissim</h4>
+              <form>
+                <input type="text" placeholder="Ваш номер телефона">
+                <input type="submit" value="Заказать звонок">
+              </form>
+              <p>Нажимая “Оформить заказ”  вы соглашаетесь с <a href="#">Политикой обработки персональных данных</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="addbusket-modal">
+      <div class="img-container-small">
+        <div class="small-img"></div>
+      </div>
+      <div class="small-title"><span class="kind"></span> <span class="name"></span>    добавлен в корзину! </div>
+      <div class="line"></div>
+      <button class="goPay contine">Перейти к оплате</button>
+    </div>
+    <div class="inbusket"><img src="../media/icon/basket.svg" alt="icon">
+      <div class="numberOfItem">1</div>
+    </div>
+    <div class="dish-overlay">
+      <div class="modal-content">
+        <div class="modal-close"></div>
+        <div class="modal-img"></div>
+        <div class="modal-info">
+          <h4>Салат</h4>
+          <h3>Греческийssssss</h3>
+          <p>Курица, лапша яичная, бульон куриный морковь, лук</p>
+          <div class="modal-btns">
+            <div class="modal-btn">
+              <button class="count-dish active">1 порция</button>
+              <button class="count-dish">3 порции</button>
+              <button class="count-dish">6 порций</button>
+            </div>
+            <div class="info-dish">
+              <p>150g</p>
+              <p class="price">199.00₽</p>
+            </div>
+            <button class="addBusket">В корзину    </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item-in-busket">
+      <div class="modal-close3"></div>
+      <div class="itemInBusket-title">
+        <h3>Товары в корзине</h3>
+      </div>
+      <div class="itemInBusket-body">
+        <div class="item">
+          <div class="img-container"><img src="../media/image/dish.jpg" alt="image"></div>
+          <div class="titles">
+            <div class="names">Салат Греческий</div>
+            <div class="grams">250 грамм</div>
+          </div>
+          <div class="count-wrap">
+            <div class="minus"> </div>
+            <div class="num">1</div>
+            <div class="plus"> </div>
+          </div>
+          <div class="dlt-item">   </div>
+        </div>
+      </div>
+      <div class="itemInBusket-btn">
+        <div class="price-wrap">
+          <p>К оплате</p>
+          <p class="price">199.00₽</p>
+        </div>
+        <button class="contine">Продолжить  </button>
+      </div>
+    </div>
+    <div class="order-overlay">
+      <div class="modal-content">
+        <div class="modal-close"></div>
+        <h3>Оформление заказа</h3>
+        <form class="form-order">
+          <label for="name">ФИО</label>
+          <input type="text" id="name" placeholder="Иванов Иван Иванович">
+          <label for="tel">Номер телефона</label>
+          <input type="text" id="tel" placeholder="8 800 555-35-35">
+          <label for="addres">Куда доставить?</label>
+          <input type="text" id="addres" placeholder="ул. Пушкина, дом 1">
+          <label for="time">Когда доставить?</label>
+          <input type="text" id="time" placeholder="Сегодня, 16:40">
+          <div class="form_bottom">
+            <p>Нажимая “Оформить заказ”  вы соглашаетесь с <a href="#">Политикой обработки персональных данных</a> </p>
+            <input type="submit" value="Оформить заказ">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="success">
+      <div class="success-content">
+        <div class="imgOk"></div>
+        <h3>Заказ оформлен</h3>
+        <p>Менеджер свяжется с вами в ближайшее время для уточнения деталей</p><a href="/">Вернуться на главную</a>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-3">
+            <div class="logo-footer"> <img src="../media/icon/logo.svg" alt="logo">
+              <p>©Мама наготовила, Inc 2020</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <ul class="list">
+              <li>
+                <div class="footer-title">Меню</div>
+              </li>
+              <li><a href="#">Салаты</a></li>
+              <li><a href="#">Напитки</a></li>
+              <li><a href="#">Супы</a></li>
+              <li><a href="#">Второе</a></li>
+              <li><a href="#">Семейный ужин</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-3">
+            <div class="info">
+              <div class="footer-title">Информация</div><a href="#">Оплата и доставка</a><a href="#">Политика конфиденциальности </a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <div class="contact">
+              <div class="footer-title">Контакты</div><a class="phone" href="tel:+7 (843) 276-66-76">+7 (843) 276-66-76 <img src="../media/icon/footer-tel.svg" alt="icon"></a><a class="phone" href="#">@mamanagotovila2018<img src="../media/icon/footer-twit.svg" alt="icon"></a><a class="phone" href="#">@mamanagotovila<img src="../media/icon/watsapp-footer.svg" alt="icon"></a>
+            </div>
+            <div class="mobile-block">©Мама наготовила, Inc 2020         </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="buildjs/owl.carousel.js"></script>
+    <script src="buildjs/index.js"></script>
+    <script>
+
+filterSelection("all")
+function filterSelection(c) {
+  let x, i;
+  x = document.getElementsByClassName("dish-item");  
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  let i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// let btnContainer = document.getElementById("tabs");
+// let btns = btnContainer.getElementsByClassName("tab");
+
+// for (var i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function(){
+//     let current = document.getElementsByClassName("active");
+//     current[0].className = current[0].className.replace(" active", "");
+//     this.className += " active";
+//   });
+// }
+
+
+
+    </script>
+  </body>
+</html>

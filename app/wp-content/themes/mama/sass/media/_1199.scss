@@ -1,0 +1,37 @@
+@media screen and (max-width: 1199px) {
+  #main-slider {
+    .item {
+      align-items: center;
+      justify-content: center;
+      .slider-info {
+        padding-left: 0;
+        text-align: center;
+        h1 {
+          font-size: 85px; 
+        }
+      }
+      .slider-img {
+        display: none;
+      }
+      .count-list-wrap {
+        margin: 0 auto;
+      }
+    }
+    .owl-nav {
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      width: 750px;
+    }
+  }
+
+  // header
+  .header {
+    .header-contact {
+      .phone {
+        & a:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+}

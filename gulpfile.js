@@ -37,7 +37,7 @@ gulp.task('pug', function () {
 gulp.task('default', function() {
   browserSync.init({
         server: {
-            baseDir: "./app"
+            baseDir: "./app/wp-content/themes/mama"
         }
     });
     gulp.watch("app/pug/**/*.pug", function () {
@@ -48,8 +48,9 @@ gulp.task('default', function() {
             .pipe(gulp.dest('app/'))
             .pipe(browserSync.reload({stream: true}));
     });
-    gulp.watch("app/sass/**/*.scss", function () {
-        return gulp.src("app/sass/**/*.scss")
+    gulp.watch("app/wp-content/themes/mama/**/*.php").on("change", browserSync.reload);
+    gulp.watch("app/wp-content/themes/mama/sass/**/*.scss", function () {
+        return gulp.src("app/wp-content/themes/mama/sass/**/*.scss")
           .pipe(sass())
           .pipe(autoprefixer({
             overrideBrowserslist: ['> 0.1%'],
@@ -58,13 +59,13 @@ gulp.task('default', function() {
           .pipe(cleanCSS({
             level: 2
           }))
-          .pipe(gulp.dest("app/css"))
+          .pipe(gulp.dest("app/wp-content/themes/mama/css"))
           .pipe(browserSync.stream());
     });
-    gulp.watch("app/js/**/*.js", function () {
-      return gulp.src("app/js/index.js")
+    gulp.watch("app/wp-content/themes/mama/js/**/*.js", function () {
+      return gulp.src("app/wp-content/themes/mama/js/index.js")
         .pipe(webpack(webConfig))
-        .pipe(gulp.dest("app/buildjs"))
+        .pipe(gulp.dest("app/wp-content/themes/mama/buildjs"))
         .pipe(browserSync.stream());
     });
 });
