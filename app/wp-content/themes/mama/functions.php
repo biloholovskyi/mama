@@ -11,7 +11,7 @@ function menu() {
   register_nav_menu('header', 'Главное меню в шапке');
   register_nav_menu('footer', 'Меню в подвале');
   // подключаем обложку поста
-  add_theme_support( 'post-thumbnails', array('post', ) );
+  add_theme_support( 'post-thumbnails', array('post', 'slider', 'about' ) );
   // удаляем ... в кратком описание постов
   add_filter('excerpt_more', function($more) {
     return '';
@@ -43,21 +43,21 @@ function script_them() {
 // пример создания нового типа поста
 add_action( 'init', 'register_post_types' );
 function register_post_types(){
-  register_post_type('catalog', array(
+  register_post_type('slider', array(
     'label'  => null,
     'labels' => array(
-      'name'               => 'Категории', // основное название для типа записи
-      'singular_name'      => 'Категория', // название для одной записи этого типа
-      'add_new'            => 'Добавить Категорию', // для добавления новой записи
-      'add_new_item'       => 'Добавление категории', // заголовка у вновь создаваемой записи в админ-панели.
-      'edit_item'          => 'Редактирование категории', // для редактирования типа записи
-      'new_item'           => 'Новая категория', // текст новой записи
-      'view_item'          => 'Смотреть категорию', // для просмотра записи этого типа.
-      'search_items'       => 'Искать категорию', // для поиска по этим типам записи
-      'not_found'          => 'Не найдена категория', // если в результате поиска ничего не было найдено
-      'not_found_in_trash' => 'Не найдена категория в корзине', // если не было найдено в корзине
+      'name'               => 'Слайдер', // основное название для типа записи
+      'singular_name'      => 'Слайдер', // название для одной записи этого типа
+      'add_new'            => 'Добавить слайд', // для добавления новой записи
+      'add_new_item'       => 'Добавление слайд', // заголовка у вновь создаваемой записи в админ-панели.
+      'edit_item'          => 'Редактирование слайда', // для редактирования типа записи
+      'new_item'           => 'Новый слайд', // текст новой записи
+      'view_item'          => 'Смотреть слайд', // для просмотра записи этого типа.
+      'search_items'       => 'Искать слайд', // для поиска по этим типам записи
+      'not_found'          => 'Не найден слайд', // если в результате поиска ничего не было найдено
+      'not_found_in_trash' => 'Не найден слайд в корзине', // если не было найдено в корзине
       'parent_item_colon'  => '', // для родителей (у древовидных типов)
-      'menu_name'          => 'Категории', // название меню
+      'menu_name'          => 'Слайдер', // название меню
     ),
     'description'         => '',
     'public'              => true,
@@ -70,7 +70,46 @@ function register_post_types(){
     'show_in_rest'        => null, // добавить в REST API. C WP 4.7
     'rest_base'           => null, // $post_type. C WP 4.7
     'menu_position'       => 2,
-    'menu_icon'           => 'dashicons-grid-view',
+    'menu_icon'           => 'dashicons-images-alt',
+    //'capability_type'   => 'post',
+    //'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
+    //'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+    'hierarchical'        => false,
+    'supports'            => array('title', 'thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+    'taxonomies'          => array(),
+    'has_archive'         => false,
+    'rewrite'             => true,
+    'query_var'           => true,
+  ) );
+
+  register_post_type('about', array(
+    'label'  => null,
+    'labels' => array(
+      'name'               => 'Сотрудники', // основное название для типа записи
+      'singular_name'      => 'Сотрудник', // название для одной записи этого типа
+      'add_new'            => 'Добавить сотрудника', // для добавления новой записи
+      'add_new_item'       => 'Добавление сотрудника', // заголовка у вновь создаваемой записи в админ-панели.
+      'edit_item'          => 'Редактирование сотрудника', // для редактирования типа записи
+      'new_item'           => 'Новый сотрудник', // текст новой записи
+      'view_item'          => 'Смотреть сотрудника', // для просмотра записи этого типа.
+      'search_items'       => 'Искать сотрудника', // для поиска по этим типам записи
+      'not_found'          => 'Не найден сотрудник', // если в результате поиска ничего не было найдено
+      'not_found_in_trash' => 'Не найден сотрудник в корзине', // если не было найдено в корзине
+      'parent_item_colon'  => '', // для родителей (у древовидных типов)
+      'menu_name'          => 'Сотрудники', // название меню
+    ),
+    'description'         => '',
+    'public'              => true,
+    'publicly_queryable'  => true, // зависит от public
+    'exclude_from_search' => true, // зависит от public
+    'show_ui'             => true, // зависит от public
+    'show_in_menu'        => true, // показывать ли в меню адмнки
+    'show_in_admin_bar'   => true, // по умолчанию значение show_in_menu
+    'show_in_nav_menus'   => true, // зависит от public
+    'show_in_rest'        => null, // добавить в REST API. C WP 4.7
+    'rest_base'           => null, // $post_type. C WP 4.7
+    'menu_position'       => 3,
+    'menu_icon'           => 'dashicons-admin-users',
     //'capability_type'   => 'post',
     //'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
     //'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав

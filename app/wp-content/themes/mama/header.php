@@ -25,8 +25,8 @@
         </div>
       </div>
       <div class="header-contact">
-        <div class="phone"><a href="tel:+7 (843) 276-66-76">+7 (843) 276-66-76<img src="<?php echo get_template_directory_uri(); ?>/media/icon/tel.svg" alt="icon"></a><a class="anhors" href="#callback">Вам перезвонить?</a></div>
-        <div class="social"><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/twit.svg" alt="icon"></a><a href="#">        <img src="<?php echo get_template_directory_uri(); ?>/media/icon/wApp.svg" alt="icon"></a></div>
+        <div class="phone"><a href="tel:"><?php the_field('mobile'); ?><img src="<?php echo get_template_directory_uri(); ?>/media/icon/tel.svg" alt="icon"></a><a class="anhors" href="#callback">Вам перезвонить?</a></div>
+        <div class="social"><a href="<?php the_field('telegram'); ?>" target="_blank" ><img src="<?php echo get_template_directory_uri(); ?>/media/icon/twit.svg" alt="icon"></a><a href="<?php the_field('whatApp'); ?>"  target="_blank">        <img src="<?php echo get_template_directory_uri(); ?>/media/icon/wApp.svg" alt="icon"></a></div>
       </div>
     </header>
     <div class="mobile-menu"><a href="/"><img class="mobile-logo" src="../media/icon/logo.svg" alt="logo"></a>

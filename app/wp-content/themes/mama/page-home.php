@@ -9,48 +9,38 @@ Template Name: Home
         <div class="row">
           <div class="col-12">
             <div class="owl-carousel owl-theme" id="main-slider">
+            <?php
+            $args = array(
+              'numberposts' => -1, // если -1 то выводит все
+              'orderby' => 'date',
+              'order' => 'DESC',
+              'post_type' => 'slider', // тип поста
+              'suppress_filters' => true,
+            );
+
+            $posts = get_posts($args);
+
+            foreach ($posts as $post) {
+              setup_postdata($post);
+              ?>
               <div class="item">
                 <div class="slider-info">
-                  <h1>Паста <br>с лососем</h1>
-                  <p class="desc">Курица, лапша яичная, бульон куриный, морковь, лук </p>
+                  <h1><?php the_title(); ?></h1>
+                  <p class="desc"><?php the_field('slider_desc'); ?></p>
                   <div class="count-list-wrap">
                     <div class="select-num">1 порция</div>
                     <div class="price"> 
-                      <div class="offer">199.00₽ </div>
-                      <p>123.00₽   </p>
+                      <div class="offer"><?php the_field('price'); ?>₽</div>
+                      <p><?php the_field('offer'); ?>₽</p>
                     </div>
                     <button class="busket"></button>
                   </div>
-                </div><img class="slider-img" src="../media/image/dish.jpg" alt="image">
+                </div><img class="slider-img" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="image">
               </div>
-              <div class="item">
-                <div class="slider-info">
-                  <h1>Салат <br>Греческий</h1>
-                  <p class="desc">лапша яичная,  морковь, лук </p>
-                  <div class="count-list-wrap">
-                    <div class="select-num">1 порция</div>
-                    <div class="price"> 
-                      <div class="offer">169.00₽</div>
-                      <p>223.00₽  </p>
-                    </div>
-                    <button class="busket"></button>
-                  </div>
-                </div><img class="slider-img" src="../media/image/dish2.png" alt="image">
-              </div>
-              <div class="item">
-                <div class="slider-info">
-                  <h1>Солянка</h1>
-                  <p class="desc">бульон куриный, морковь, лук </p>
-                  <div class="count-list-wrap">
-                    <div class="select-num">1 порция</div>
-                    <div class="price"> 
-                      <div class="offer">200.00₽</div>
-                      <p>150.00₽  </p>
-                    </div>
-                    <button class="busket"></button>
-                  </div>
-                </div><img class="slider-img" src="../media/image/dish.jpg" alt="image">
-              </div>
+              <?php
+              }
+              wp_reset_postdata(); // сброс
+              ?>
             </div>
           </div>
         </div>
@@ -174,67 +164,99 @@ Template Name: Home
           <div class="col-12">
             <div class="about-title">
               <h2>О нас</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium</p>
+              <p><?php the_field('about_desc'); ?></p>
             </div>
           </div>
         </div>
+        <?php
+          $args = array(
+            'numberposts' => -1, // если -1 то выводит все
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_type' => 'about', // тип поста
+            'suppress_filters' => true,
+          );
+
+          $posts = get_posts($args);
+          $about_count = 0;
+          foreach ($posts as $post) {
+            setup_postdata($post);
+            $product_count ++;
+				    if ( $about_count === 1 ) {
+            ?>
+          <div class="row about-row">
+            <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-12">
+              <div class="about-info">
+                <div class="about-name"><?php the_title(); ?></div>
+                <div class="desc"><?php the_field('about_descripton'); ?></div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-12">
+              <div class="about-photo"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/big-spot.png" alt=""><img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="photo"></div>
+            </div>
+          </div>
+        <?php
+				} else {
+					$about_count = 0;
+          ?>
         <div class="row about-row">
           <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-12">
             <div class="about-info">
-              <div class="about-name">Галина Сергеевна Васнецова</div>
-              <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.</div>
+              <div class="about-name"><?php the_title(); ?></div>
+              <div class="desc"><?php the_field('about_descripton'); ?></div>
             </div>
           </div>
           <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-12">
-            <div class="about-photo"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/big-spot.png" alt=""><img src="<?php echo get_template_directory_uri(); ?>/media/image/about.png" alt="photo"></div>
+            <div class="about-photo"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/big-spot.png" alt=""><img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="photo"></div>
           </div>
         </div>
-        <div class="row about-row">
-          <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-12">
-            <div class="about-info">
-              <div class="about-name">Илья Васильевич Полежайкин</div>
-              <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta ut enim at pretium. Donec sagittis eleifend quam at tempor. Nullam mattis dignissim tortor et consequat. Suspendisse condimentum sed.</div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-12">
-            <div class="about-photo"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/big-spot.png" alt=""><img src="<?php echo get_template_directory_uri(); ?>/media/image/about2.png" alt="photo"></div>
-          </div>
-        </div>
+        <?php
+				}
+			}
+		
+		wp_reset_postdata(); // сброс
+		?>
       </div>
     </div>
     <div class="order">
       <div class="container">
         <div class="row">
           <div class="col-12">
+            <?php
+              $step = get_field('step_1');
+              $step2 = get_field('step_2');
+              $step3 = get_field('step_3');
+              $step4 = get_field('step_4');
+            ?>
             <h2>Как заказать? </h2>
           </div>
         </div>
         <div class="row">
           <div class="col-6 col-lg-3 col-md-6 col-sm-6">
             <div class="order-text">
-              <div class="order-item"><img src="../media/icon/order1.svg" alt="icon">
-                <h3>Lorem ipsum dolor sit</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              <div class="order-item"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/order1.svg" alt="icon">
+                <h3><?php echo $step['step_title']; ?></h3>
+                <p><?php echo $step['step_desc']; ?></p>
               </div>
               <div class="order-item">
                 <div class="img-item">3</div>
-                <h3>Lorem ipsum dolor sit</h3>
-                <p>Donec ante ex, rutrum in tempor quis, fringilla sed ex</p>
+                <h3><?php echo $step2['step_title2']; ?></h3>
+                <p><?php echo $step2['step_desc2']; ?></p>
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-6 col-md-12 col-sm-12 order-last"><img class="order-img" src="../media/image/2.png" alt="image"></div>
+          <div class="col-12 col-lg-6 col-md-12 col-sm-12 order-last"><img class="order-img" src="<?php echo get_template_directory_uri(); ?>/media/image/2.png" alt="image"></div>
           <div class="col-6 col-lg-3 col-md-6 col-sm-6 order-lg-last">
             <div class="order-text">
               <div class="order-item">
                 <div class="img-item">2</div>
-                <h3>Lorem ipsum dolor sit</h3>
-                <p>Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel</p>
+                <h3><?php echo $step3['step_title3']; ?></h3>
+                <p><?php echo $step3['step_desc3']; ?></p>
               </div>
               <div class="order-item">
                 <div class="img-item">4</div>
-                <h3>Suspendisse lacinia</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                <h3><?php echo $step4['step_title4']; ?></h3>
+                <p><?php echo $step4['step_desc4']; ?></p>
               </div>
             </div>
           </div>
@@ -245,6 +267,11 @@ Template Name: Home
       <div class="container">
         <div class="row">
           <div class="col-12">
+          <?php
+              $pay_step = get_field('pay_step');
+              $pay_step2 = get_field('pay_step2');
+              $pay_step3 = get_field('pay_step3');
+            ?>
             <h2>Как оплатить? </h2>
           </div>
         </div>
@@ -252,28 +279,28 @@ Template Name: Home
           <div class="col-12 col-lg-4 col-md-4">
             <div class="pay-item">
               <div class="img-item">1</div>
-              <h3>Lorem ipsum dolor sit</h3>
-              <p>Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel</p>
+              <h3><?php echo $pay_step['pay_title']; ?></h3>
+              <p><?php echo $pay_step['pay_desc']; ?></p>
             </div>
           </div>
           <div class="col-12 col-lg-4 col-md-4">
             <div class="pay-item">
               <div class="img-item">2</div>
-              <h3>Lorem ipsum dolor sit</h3>
-              <p>Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel</p>
+              <h3><?php echo $pay_step2['pay_title2']; ?></h3>
+              <p><?php echo $pay_step2['pay_desc2']; ?></p>
             </div>
           </div>
           <div class="col-12 col-lg-4 col-md-4">
             <div class="pay-item">
               <div class="img-item">3</div>
-              <h3>Lorem ipsum dolor sit</h3>
-              <p>Phasellus aliquam, est a semper dignissim, justo augue dapibus orci, vel  </p>
+              <h3><?php echo $pay_step3['pay_title3']; ?></h3>
+              <p><?php echo $pay_step3['pay_desc3']; ?></p>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <div class="payment-method"><img src="../media/image/pay.jpg" alt="logo"><img src="../media/image/pay2.jpg" alt="logo"><img src="../media/image/pay3.jpg" alt="logo"><img src="../media/image/pay4.png" alt="logo"><img src="../media/image/pay5.png" alt="logo"></div>
+            <div class="payment-method"><img src="<?php echo get_template_directory_uri(); ?>/media/image/pay.jpg" alt="logo"><img src="<?php echo get_template_directory_uri(); ?>/media/image/pay2.jpg" alt="logo"><img src="<?php echo get_template_directory_uri(); ?>/media/image/pay3.jpg" alt="logo"><img src="<?php echo get_template_directory_uri(); ?>/media/image/pay4.png" alt="logo"><img src="<?php echo get_template_directory_uri(); ?>/media/image/pay5.png" alt="logo"></div>
           </div>
         </div>
       </div>
