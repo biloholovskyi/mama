@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="header-contact">
-        <div class="phone"><a href="tel:"><?php the_field('mobile'); ?><img src="<?php echo get_template_directory_uri(); ?>/media/icon/tel.svg" alt="icon"></a><a class="anhors" href="#callback">Вам перезвонить?</a></div>
+        <div class="phone"><a href="tel:<?php the_field('mobile'); ?>"><?php the_field('mobile'); ?><img src="<?php echo get_template_directory_uri(); ?>/media/icon/tel.svg" alt="icon"></a><a class="anhors" href="#callback">Вам перезвонить?</a></div>
         <div class="social"><a href="<?php the_field('telegram'); ?>" target="_blank" ><img src="<?php echo get_template_directory_uri(); ?>/media/icon/twit.svg" alt="icon"></a><a href="<?php the_field('whatApp'); ?>"  target="_blank">        <img src="<?php echo get_template_directory_uri(); ?>/media/icon/wApp.svg" alt="icon"></a></div>
       </div>
     </header>

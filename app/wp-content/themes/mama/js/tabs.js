@@ -33,15 +33,5 @@ function w3RemoveClass(element, name) {
 }
 
 
-// let btnContainer = document.getElementById("tabs");
-// let btns = btnContainer.getElementsByClassName("tab");
-
-// for (var i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener("click", function(){
-//     let current = document.getElementsByClassName("active");
-//     current[0].className = current[0].className.replace(" active", "");
-//     this.className += " active";
-//   });
-// }
 
 
