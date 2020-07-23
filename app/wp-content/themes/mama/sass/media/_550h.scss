@@ -1,0 +1,39 @@
+@media screen and (max-height: 550px) {
+  .dish-overlay {
+    .modal-content {
+      min-height: 340px;
+      justify-content: center;
+      .modal-img {
+        display: none;
+      }
+    }
+  }
+  .item-in-busket {
+    .itemInBusket-body {
+      min-height: 200px;
+      max-height: 200px;
+      overflow: scroll;
+    }
+  }
+  .order-overlay {
+    .modal-content {
+      padding: 10px;
+      h3 {
+        font-size: 35px;
+      }
+      // form {
+      //   label {
+      //     font-size: 12px;
+      //     margin-bottom: 8px;
+      //   }
+      //   input {
+      //     margin-bottom: 10px;
+      //     font-size: 12px;
+      //   }
+      // }
+    }
+  }
+  .success .success-content .imgOk {
+    display: none;
+  }
+}

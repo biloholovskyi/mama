@@ -1,5 +1,5 @@
 import 'normalize.css';
-import './form';
+// import './form';
 // import './LS_busket';
 import './busket'; 
 
@@ -45,6 +45,7 @@ $(document).ready((e) => {
   // close menu on responsive
   $('.modal-close2').on('click', function(){ 
     $('.modal-menu').toggleClass('active');
+    $('body').removeClass('active');
   });
 
 
@@ -79,21 +80,13 @@ $(document).ready((e) => {
   
 
       $('.dish-overlay').css('visibility', 'visible');
-      $('body').css({
-        'overflow': 'hidden',
-        'position': 'relative',
-        'height': '100vh'
-      });
+      $('body').addClass('active');
   });
 
   $('.modal-close').on('click', function () {
     $('.dish-overlay').css('visibility', 'hidden');
     $('.order-overlay').css('visibility', 'hidden');
-    $('body').css({
-      'overflow': 'visible',
-      'position': 'relative',
-      'height': '100%'
-    });
+    $('body').removeClass('active');
   });
 
  // close modal busket
@@ -123,8 +116,8 @@ $(document).ready((e) => {
   
   $('.contine').on('click', function(){
     $('.item-in-busket').css('display', 'none');
-
     $('.order-overlay').css('visibility', 'visible');
+    $('body').addClass('active');
   });
 
 // adaptive menu 

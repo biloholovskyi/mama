@@ -50,25 +50,20 @@ $(document).ready(function(){
 
     $("#form-order").submit(function (e) { 
       e.preventDefault();
-      var form_data = $(this).serialize();
-      $.ajax({
-        type: "POST",
-        url: "/wp-content/themes/mama/send.php", 
-        data: form_data,
-        success: function () {
-          $('.modal-alert').fadeIn('slow').css('display', 'flex');
-          $('input[type="text"], textarea').val('');
-          setTimeout(function () {
-            $('.modal-alert').fadeOut('slow'); 
-          }, 2000)
-        },
-        error: function () {
-          alert('возникла ошибка');
-        }
-      });
-      return false;
+        $.ajax({
+          url: '/wp-content/themes/mama/send.php',
+          type: 'POST',
+          data: $(this).serialize(),
+          success: function (data) {
+            
+            $('.success').fadeIn('slow').css('display', 'flex');
+            $('input[type="text"], textarea').val('');
+            setTimeout(function () {
+              $('.success').fadeOut('slow');
+            }, 2000)
+          }
+        });
     });
-
 }); 
 
 
@@ -105,7 +100,7 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-//
+
 
     </script>
   </body>
