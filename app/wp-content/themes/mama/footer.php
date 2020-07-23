@@ -12,7 +12,7 @@
               <li>
                 <div class="footer-title">Меню</div>
               </li>
-              <li><a class="salat_menu" href="#popular">Салаты</a></li>
+              <li><a  href="#popular">Салаты</a></li>
               <li><a href="#">Напитки</a></li>
               <li><a href="#">Супы</a></li>
               <li><a href="#">Второе</a></li>

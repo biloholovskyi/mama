@@ -57,7 +57,7 @@ Template Name: Home
           <div class="col-12">
             <div class="tabs" id="tabs">
               <div class="tab active " onclick="filterSelection('all')"> Все <span>категории</span></div>
-              <div class="tab salat_menu" onclick="filterSelection('salat')">Салаты</div>
+              <div class="tab" onclick="filterSelection('salat')">Салаты</div>
               <div class="tab" onclick="filterSelection('soup')"> Супы</div>
               <div class="tab" onclick="filterSelection('other')">Второе</div>
               <div class="tab" onclick="filterSelection('drink')">Напитки  </div>
