@@ -2,7 +2,7 @@
 $('.form-order').on('submit', function (e) {
   e.preventDefault();
   $.ajax({
-    url: '/wp-content/themes//send.php',
+    url: '/wp-content/themes/mama/send.php',
     type: 'POST',
     data: $(this).serialize(),
     success: function (data) {

@@ -33,10 +33,45 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal-alert">
+      <div class="modal-alert__body">
+        <div class="modal-alert__close"></div>
+        <div class="modal-alert__text">Спасибо за вашу заявку</div>
+      </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <?php wp_footer(); ?>
     
     <script>
+
+$(document).ready(function(){
+
+    $("#form-order").submit(function (e) { 
+      e.preventDefault();
+      var form_data = $(this).serialize();
+      $.ajax({
+        type: "POST",
+        url: "/wp-content/themes/mama/send.php", 
+        data: form_data,
+        success: function () {
+          $('.modal-alert').fadeIn('slow').css('display', 'flex');
+          $('input[type="text"], textarea').val('');
+          setTimeout(function () {
+            $('.modal-alert').fadeOut('slow'); 
+          }, 2000)
+        },
+        error: function () {
+          alert('возникла ошибка');
+        }
+      });
+      return false;
+    });
+
+}); 
+
+
 
 filterSelection("all")
 function filterSelection(c) {
@@ -69,6 +104,8 @@ function w3RemoveClass(element, name) {
   }
   element.className = arr1.join(" ");
 }
+
+//
 
     </script>
   </body>

@@ -78,103 +78,24 @@ Template Name: Home
         $posts = get_posts($args);
 
         foreach ($posts as $post) {
-          setup_postdata($post);
+          setup_postdata($post); 
           ?>
-          <div class="dish-item <?php the_field('category'); ?>">
+          <div data-id="2" class="dish-item <?php the_field('category'); ?>">
             <div class="dish-title"> 
               <h4><?php the_title(); ?></h4>
               <h4 class="bold"><?php the_field('item__name'); ?></h4>
             </div><img class="food-img photo" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="">
             <div class="dish-list-wrap">
-              <div class="select-num">1 порция</div>
-              <button class="busket"><?php the_field('item__price'); ?>₽</button>
+              <div class="select-num">1 порция</div>  
+              <button class="busket" data-id="1" ><?php the_field('item__price'); ?>₽</button>
             </div>
           </div>
           <?php
             }
             wp_reset_postdata(); // сброс
             ?>
-          <!-- <div class="dish-item soup">
-            <div class="dish-title">
-              <h4>Суп</h4>
-              <h4 class="bold">Солянка</h4>
-            </div><img class="food-img photo" src="../media/image/dish3.png" alt="">
-            <div class="dish-list-wrap">
-              <div class="select-num">1 порция</div>
-              <button class="busket">199.00₽</button>
-            </div>
-          </div>
-          <div class="dish-item other">
-            <div class="dish-title">
-              <h4>Второе</h4>
-              <h4 class="bold">Паста с лососем</h4>
-            </div><img class="food-img photo" src="../media/image/dish4.png" alt="">
-            <div class="dish-list-wrap">
-              <div class="select-num">1 порция</div>
-              <button class="busket">199.00₽ </button>
-            </div>
-          </div>
-          <div class="dish-item soup">
-            <div class="dish-title">
-              <h4>Суп</h4>
-              <h4 class="bold">Солянка</h4>
-            </div><img class="food-img photo" src="../media/image/dish3.png" alt="">
-            <div class="dish-list-wrap">
-              <div class="select-num">1 порция</div>
-              <button class="busket">199.00₽</button>
-            </div>
-          </div>
-          <div class="dish-item salat">
-            <div class="dish-title">
-              <h4>Салаты</h4>
-              <h4 class="bold">Греческий</h4>
-            </div><img class="food-img photo" src="../media/image/dish2.png" alt="">
-            <div class="dish-list-wrap">
-              <div class="select-num">1 порция</div>
-              <button class="busket">199.00₽ </button>
-            </div>
-          </div>
-          <div class="dish-item other">
-            <div class="dish-title">
-              <h4>Второе</h4>
-              <h4 class="bold">Паста с лососем</h4>
-            </div><img class="food-img photo" src="../media/image/dish4.png" alt="">
-            <div class="dish-list-wrap">
-              <div class="select-num">1 порция</div>
-              <button class="busket">199.00₽ </button>
-            </div>
-          </div>
-          <div class="dish-item salat">
-            <div class="dish-title">
-              <h4>Салаты</h4>
-              <h4 class="bold">Греческий</h4>
-            </div><img class="food-img photo" src="../media/image/dish2.png" alt="">
-            <div class="dish-list-wrap">
-              <div class="select-num">1 порция</div>
-              <button class="busket">199.00₽</button>
-            </div>
-          </div>
-          <div class="dish-item soup">
-            <div class="dish-title">
-              <h4>Суп</h4>
-              <h4 class="bold">Солянка</h4>
-            </div><img class="food-img photo" src="../media/image/dish3.png" alt="">
-            <div class="dish-list-wrap">
-              <div class="select-num">1 порция</div>
-              <button class="busket">199.00₽</button>
-            </div>
-          </div>
-          <div class="dish-item other">
-            <div class="dish-title">
-              <h4>Второе</h4>
-              <h4 class="bold">Паста с лососем</h4>
-            </div><img class="food-img photo" src="../media/image/dish4.png" alt="">
-            <div class="dish-list-wrap">
-              <div class="select-num">1 порция</div>
-              <button class="busket">199.00₽</button>
-            </div>
-          </div> -->
-        </div>
+         
+        </div> 
       </div>
     </div>
     <div class="about" id="about">
@@ -347,7 +268,7 @@ Template Name: Home
       <div class="line"></div>
       <button class="goPay contine">Перейти к оплате</button>
     </div>
-    <div class="inbusket"><img src="../media/icon/basket.svg" alt="icon">
+    <div class="inbusket"><img src="<?php echo get_template_directory_uri(); ?>/media/icon/basket.svg" alt="icon">
       <div class="numberOfItem">1</div>
     </div>
     <div class="dish-overlay">
@@ -378,9 +299,9 @@ Template Name: Home
       <div class="itemInBusket-title">
         <h3>Товары в корзине</h3>
       </div>
-      <div class="itemInBusket-body">
+      <div class="itemInBusket-body" id="cart_content">  
         <div class="item">
-          <div class="img-container"><img src="../media/image/dish.jpg" alt="image"></div>
+          <div class="img-container"><img src="<?php echo get_template_directory_uri(); ?>/media/image/dish.jpg" alt="image"></div>
           <div class="titles">
             <div class="names">Салат Греческий</div>
             <div class="grams">250 грамм</div>
@@ -405,15 +326,15 @@ Template Name: Home
       <div class="modal-content">
         <div class="modal-close"></div>
         <h3>Оформление заказа</h3>
-        <form class="form-order">
+        <form class="form-order" id="form-order"> 
           <label for="name">ФИО</label>
-          <input type="text" id="name" placeholder="Иванов Иван Иванович">
+          <input type="text" id="name" name="user_name"  placeholder="Иванов Иван Иванович">
           <label for="tel">Номер телефона</label>
-          <input type="text" id="tel" placeholder="8 800 555-35-35">
+          <input type="text" id="tel" name="user_tel" placeholder="8 800 555-35-35">
           <label for="addres">Куда доставить?</label>
-          <input type="text" id="addres" placeholder="ул. Пушкина, дом 1">
+          <input type="text" id="addres" name="user_add" placeholder="ул. Пушкина, дом 1">
           <label for="time">Когда доставить?</label>
-          <input type="text" id="time" placeholder="Сегодня, 16:40">
+          <input type="text" id="time" name="user_time" placeholder="Сегодня, 16:40">
           <div class="form_bottom">
             <p>Нажимая “Оформить заказ”  вы соглашаетесь с <a href="#">Политикой обработки персональных данных</a> </p>
             <input type="submit" value="Оформить заказ">

@@ -1,10 +1,14 @@
 import 'normalize.css';
 import './form';
+// import './LS_busket';
+import './busket'; 
 
 
 $(document).ready((e) => {
 
-  //anhors
+ 
+
+  //anhors 
   $('.anhors').on('click', function(){
     event.preventDefault();
     let id  = $(this).attr('href'),
@@ -164,7 +168,7 @@ $(document).on('click', function(e){
     if(!modal.is(e.target) && modal.has(e.target).length === 0) {
       $('.dish-overlay').css('visibility', 'hidden');
       $('.order-overlay').css('visibility', 'hidden');
-      $('.item-in-busket').css('display', 'none');
+      $('.item-in-busket').css('display', 'none'); 
       }
     }   
 });
@@ -172,7 +176,4 @@ $(document).on('click', function(e){
 $(window).resize(() => {
 
 });
-
-
-
 
