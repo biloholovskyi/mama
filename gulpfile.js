@@ -36,9 +36,10 @@ gulp.task('pug', function () {
 
 gulp.task('default', function() {
   browserSync.init({
-        server: {
-            baseDir: "./app/wp-content/themes/mama"
-        }
+        // server: {
+        //     // baseDir: "./app/wp-content/themes/mama"
+        // }
+    proxy: "http://localhost:8888/mama/app"
     });
     gulp.watch("app/pug/**/*.pug", function () {
         return gulp.src('app/pug/pages/*.pug')
