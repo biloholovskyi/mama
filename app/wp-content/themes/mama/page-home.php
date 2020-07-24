@@ -50,13 +50,13 @@ Template Name: Home
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h2>Популярные блюда</h2>
+            <h2 id="popular">Популярные блюда</h2>
           </div>
         </div>
         <div class="row">     
           <div class="col-12">
             <div class="tabs" id="tabs">
-              <div class="tab active" onclick="filterSelection('all')"> Все <span>категории</span></div>
+              <div class="tab active " onclick="filterSelection('all')"> Все <span>категории</span></div>
               <div class="tab" onclick="filterSelection('salat')">Салаты</div>
               <div class="tab" onclick="filterSelection('soup')"> Супы</div>
               <div class="tab" onclick="filterSelection('other')">Второе</div>
@@ -84,6 +84,7 @@ Template Name: Home
             <div class="dish-title"> 
               <h4><?php the_title(); ?></h4>
               <h4 class="bold"><?php the_field('item__name'); ?></h4>
+              <div class="gramms" style="display: none;"><?php the_field('gramms'); ?></div>
             </div><img class="food-img photo" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="">
             <div class="dish-list-wrap">
               <div class="select-num">1 порция</div>  
@@ -286,7 +287,7 @@ Template Name: Home
               <button class="count-dish">6 порций</button>
             </div>
             <div class="info-dish">
-              <p>150g</p>
+              <p class="weight">150g</p>
               <p class="price">199.00₽</p>
             </div>
             <button class="addBusket">В корзину    </button>
@@ -324,17 +325,17 @@ Template Name: Home
     </div>
     <div class="order-overlay">
       <div class="modal-content">
-        <div class="modal-close"></div>
-        <h3>Оформление заказа</h3>
-        <form class="form-order" id="form-order"> 
+        <div class="modal-close"></div> 
+        <h3>Оформление заказа</h3> 
+        <form action="send.php" method="POST" class="form-order" id="form-order"> 
           <label for="name">ФИО</label>
-          <input type="text" id="name" name="user_name"  placeholder="Иванов Иван Иванович">
+          <input type="text" id="name" name="user_name"  placeholder="Иванов Иван Иванович" required>
           <label for="tel">Номер телефона</label>
-          <input type="text" id="tel" name="user_tel" placeholder="8 800 555-35-35">
+          <input type="text" id="tel" name="user_tel" placeholder="8 800 555-35-35" required>
           <label for="addres">Куда доставить?</label>
-          <input type="text" id="addres" name="user_add" placeholder="ул. Пушкина, дом 1">
+          <input type="text" id="addres" name="user_add" placeholder="ул. Пушкина, дом 1" required>
           <label for="time">Когда доставить?</label>
-          <input type="text" id="time" name="user_time" placeholder="Сегодня, 16:40">
+          <input type="text" id="time" name="user_time" placeholder="Сегодня, 16:40" required>
           <div class="form_bottom">
             <p>Нажимая “Оформить заказ”  вы соглашаетесь с <a href="#">Политикой обработки персональных данных</a> </p>
             <input type="submit" value="Оформить заказ">

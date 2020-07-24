@@ -411,7 +411,7 @@
 .select-num {
   position: relative;
   background-color: transparent;
-  padding: 8px 36px 8px 12px;
+  padding: 8px 12px 8px 12px;
  
   font-style: normal;
   font-weight: 500;
@@ -419,20 +419,6 @@
   line-height: 22px;
   letter-spacing: -0.01em;
   color: #62605D; 
-
-  &:after {
-    content:"";
-    width: 18px;
-    height: 18px;
-    background-image: url(../media/icon/select-arrow.svg);
-    background-position: center;
-    background-size: cover;
-    transform: translateY(-50%);
-    position: absolute;
-    top: 50%;
-    right: 10px;
-  }
-  
   
 }
 

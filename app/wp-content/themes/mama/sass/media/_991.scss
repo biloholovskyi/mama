@@ -112,8 +112,14 @@
       padding: 20px;
       .modal-item {
         margin-bottom: 20px;
+        img {
+          max-width: 140px;
+          min-width: 140px;
+        }
       }
     }
+
+    
 
   }
 

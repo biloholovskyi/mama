@@ -1,7 +1,6 @@
 import 'normalize.css';
-// import './form';
-// import './LS_busket';
-import './busket'; 
+
+
 
 
 $(document).ready((e) => {
@@ -14,10 +13,11 @@ $(document).ready((e) => {
     let id  = $(this).attr('href'),
         top = $(id).offset().top;
         
-     $('body, html').animate({scrollTop: top}, 800);    
+     $('body, html').animate({scrollTop: top}, 800);
+     $('.header').removeClass('active');    
   });
 
-    $('#main-slider').owlCarousel({
+    $('#main-slider').owlCarousel({ 
       
       loop:true,
       margin:10,
@@ -41,6 +41,8 @@ $(document).ready((e) => {
     $('.header').toggleClass('active'); 
   
   });
+
+  
 
   // close menu on responsive
   $('.modal-close2').on('click', function(){ 
@@ -66,12 +68,14 @@ $(document).ready((e) => {
       const img    = current.children('.food-img').attr('src');
       const title  = current.children('.dish-title').find('h4').html();
       const title2 = current.children('.dish-title').find('.bold').html();
+      const gramm = current.children('.dish-title').find('.gramms').html();
       const price  = current.children('.dish-list-wrap').find('.busket').html();
 
       $('.modal-img').css('background-image', 'url(' + img + ')');
       $('.modal-info h4').html(title);
       $('.modal-info h3').html(title2);
       $('.info-dish .price').html(price);
+      $('.info-dish .weight').html(gramm +'g');
 
 
       $('.small-img').css('background-image', 'url(' + img + ')');
@@ -120,11 +124,20 @@ $(document).ready((e) => {
     $('body').addClass('active');
   });
 
-// adaptive menu 
+// adaptive menu  open
 
 $('.burger').on('click', function(){
   $('.header').toggleClass('active');
+  $('body').toggleClass('active');
 });
+
+
+//
+
+$('.salat_menu').on('click', function(){  
+  $('.popular-dishes .tabs .salat_menu').addClass('active').siblings().removeClass('active');
+});
+
 
 
 });
@@ -134,8 +147,6 @@ $('.burger').on('click', function(){
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
   }
-
- 
 }); 
 
 
@@ -157,13 +168,15 @@ $(document).on('click', function(e){
   let modal = $('.modal-content, .item-in-busket');
   let btn = $('.dish-item, .contine, .inbusket');
 
+
   if(!btn.is(e.target) && btn.has(e.target).length === 0) {
     if(!modal.is(e.target) && modal.has(e.target).length === 0) {
       $('.dish-overlay').css('visibility', 'hidden');
       $('.order-overlay').css('visibility', 'hidden');
       $('.item-in-busket').css('display', 'none'); 
       }
-    }   
+    }
+    
 });
 
 $(window).resize(() => {
