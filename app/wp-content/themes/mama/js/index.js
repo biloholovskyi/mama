@@ -5,7 +5,7 @@ import 'normalize.css';
 
 $(document).ready((e) => {
 
- 
+
 
   //anhors 
   $('.anhors').on('click', function(){
