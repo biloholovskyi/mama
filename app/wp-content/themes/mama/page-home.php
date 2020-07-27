@@ -101,7 +101,7 @@ Template Name: Home
           setup_postdata($post);
           $item_cat = get_field('category');
           ?>
-          <div class="dish-item show cat-<?php echo $item_cat->ID; ?>">
+          <div class="dish-item show cat-<?php echo $item_cat->ID; ?>" id="<?php the_ID(); ?>" data-gram="<?php the_field('gramms'); ?>">
             <div class="dish-title"> 
               <h4><?php echo $item_cat->post_title; ?></h4>
               <h4 class="bold"><?php the_field('item__name'); ?></h4>
@@ -322,19 +322,7 @@ Template Name: Home
         <h3>Товары в корзине</h3>
       </div>
       <div class="itemInBusket-body" id="cart_content">  
-        <div class="item">
-          <div class="img-container"><img src="<?php echo get_template_directory_uri(); ?>/media/image/dish.jpg" alt="image"></div>
-          <div class="titles">
-            <div class="names">Салат Греческий</div>
-            <div class="grams">250 грамм</div>
-          </div>
-          <div class="count-wrap">
-            <div class="minus"> </div>
-            <div class="num">1</div>
-            <div class="plus"> </div>
-          </div>
-          <div class="dlt-item">   </div>
-        </div>
+
       </div>
       <div class="itemInBusket-btn">
         <div class="price-wrap">

@@ -10,6 +10,7 @@
   z-index: 25;
   flex-direction: column;
   display: none;
+
   .modal-close3 {
     cursor: pointer;
     position: absolute;
@@ -22,6 +23,7 @@
     height: 24px;
     display: none;
   }
+
   .itemInBusket-title {
     padding-bottom: 23px;
     border-bottom: 1px solid #F0EEEB;
@@ -45,10 +47,19 @@
     padding-left: 24px;
     padding-right: 24px;
     min-height: 350px;
+
     .item {
       display: flex;
       margin-bottom: 20px;
       align-items: center;
+      justify-content: space-between;
+
+      .left,
+      .right {
+        display: flex;
+        align-items: center;
+      }
+
       .img-container {
         background: #F7F7F7;
         border-radius: 10px;
@@ -98,6 +109,7 @@
         align-items: center;
         justify-content: center;
         margin-right: 16px;
+
         .plus {
           color: rgba(11, 24, 40, 0.4);
           background-image: url(../media/icon/plus.svg);
@@ -106,7 +118,7 @@
           width: 12px;
           height: 12px;
           margin: 10px;
-          cursor: pointer; 
+          cursor: pointer;
 
         }
 
@@ -135,18 +147,20 @@
           border-right: 1px solid #F0EEEB;
         }
       }
+
       .dlt-item {
         background-image: url(../media/icon/dlt.svg);
         background-position: center;
-          background-size: cover;
-          width: 24px;
-          height: 24px;
-          object-position: center;
-          object-fit: cover;
-          cursor: pointer;
+        background-size: cover;
+        width: 24px;
+        height: 24px;
+        object-position: center;
+        object-fit: cover;
+        cursor: pointer;
       }
     }
   }
+
   .itemInBusket-btn {
     display: flex;
     justify-content: space-between;
@@ -155,19 +169,21 @@
     padding-right: 24px;
     padding-top: 14px;
     border-top: 1px solid #F0EEEB;
+
     button {
       background: #484F8C;
-          border-radius: 10px;
-          padding: 15px 16px;
-          font-style: normal; 
-          font-weight: 500;
-          font-size: 16px;
-          line-height: 20px;
-          text-align: right;
-          letter-spacing: -0.01em;
-          color: #FFFFFF;
-          border: none;
+      border-radius: 10px;
+      padding: 15px 16px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: right;
+      letter-spacing: -0.01em;
+      color: #FFFFFF;
+      border: none;
     }
+
     .price-wrap {
       &:first-child {
         font-style: normal;
@@ -178,6 +194,7 @@
         color: #62605D;
         margin-bottom: 4px;
       }
+
       .price {
         font-style: normal;
         font-weight: 500;
@@ -187,6 +204,6 @@
         color: #0B1828;
       }
     }
-    
+
   }
 }
