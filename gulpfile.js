@@ -49,7 +49,7 @@ gulp.task('default', function() {
             .pipe(gulp.dest('app/'))
             .pipe(browserSync.reload({stream: true}));
     });
-    // gulp.watch("app/wp-content/themes/mama/**/*.php").on("change", browserSync.reload);
+    gulp.watch("app/wp-content/themes/mama/**/*.php").on("change", browserSync.reload);
     gulp.watch("app/wp-content/themes/mama/sass/**/*.scss", function () {
         return gulp.src("app/wp-content/themes/mama/sass/**/*.scss")
           .pipe(sass())

@@ -1,14 +1,12 @@
 import 'normalize.css';
-
-
-
+import {switchTabs} from "./tabs";
 
 $(document).ready((e) => {
-
+  $('#tabs .tab').on('click', (e) => switchTabs(e));
 
 
   //anhors 
-  $('.anhors').on('click', function(){
+  $('.anhors').on('click', function(event){
     event.preventDefault();
     let id  = $(this).attr('href'),
         top = $(id).offset().top;
@@ -17,8 +15,7 @@ $(document).ready((e) => {
      $('.header').removeClass('active');    
   });
 
-    $('#main-slider').owlCarousel({ 
-      
+    $('#main-slider').owlCarousel({
       loop:true,
       margin:10,
       nav:true,
@@ -28,8 +25,6 @@ $(document).ready((e) => {
       items: 1,
       animateOut: 'fadeOut',
       animateIn: 'fadeIn'
-     
-      
   });
 
 
@@ -38,8 +33,7 @@ $(document).ready((e) => {
     $(this).children('.romb').toggleClass('active'); 
     $('.modal-menu').toggleClass('active');
     $('body').toggleClass('active');
-    $('.header').toggleClass('active'); 
-  
+    $('.header').toggleClass('active');
   });
 
   
@@ -62,7 +56,7 @@ $(document).ready((e) => {
   
 
   // card food modal
-  $('.dish-item').on('click', function(){
+  $('.dish-item').on('click', function() {
       const current = $(this);
 
       const img    = current.children('.food-img').attr('src');
@@ -141,13 +135,6 @@ $('.salat_menu').on('click', function(){
 
 
 });
- // active tab 
- $('#tabs .tab').on('click', function(){ 
-  if(!$(this).hasClass('active')){
-    $(this).siblings().removeClass('active');
-    $(this).addClass('active');
-  }
-}); 
 
 
  

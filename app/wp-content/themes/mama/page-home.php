@@ -22,20 +22,21 @@ Template Name: Home
 
             foreach ($posts as $post) {
               setup_postdata($post);
+              $product = get_field('product_slider');
               ?>
               <div class="item">
                 <div class="slider-info">
-                  <h1><?php the_title(); ?></h1>
-                  <p class="desc"><?php the_field('slider_desc'); ?></p>
+                  <h1><?php echo $product->post_title; ?></h1>
+                  <p class="desc"><?php the_field('desc', $product->ID); ?></p>
                   <div class="count-list-wrap">
                     <div class="select-num">1 порция</div>
                     <div class="price"> 
-                      <div class="offer"><?php the_field('price'); ?>₽</div>
-                      <p><?php the_field('offer'); ?>₽</p>
+                      <div class="offer"><?php the_field('item__price', $product->ID); ?>₽</div>
+                      <p><?php the_field('item_price_small', $product->ID); ?>₽</p>
                     </div>
                     <button class="busket"></button>
                   </div>
-                </div><img class="slider-img" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="image">
+                </div><img class="slider-img" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $product->ID ) ); ?>" alt="image">
               </div>
               <?php
               }
@@ -56,7 +57,8 @@ Template Name: Home
         <div class="row">     
           <div class="col-12">
             <div class="tabs" id="tabs">
-                <div class="tab active " onclick="filterSelection('all')"> Все <span>категории</span></div>
+                <div class="tab active" id="tab-all"> Все <span>категории</span></div>
+
                 <?php
                   $args = array(
                     'numberposts' => -1, // если -1 то выводит все
@@ -71,7 +73,7 @@ Template Name: Home
                   foreach ($posts as $post) {
                     setup_postdata($post);
                     ?>
-                    <div class="tab" onclick="filterSelection('<?php the_field('category'); ?>')"><?php the_title(); ?></div>
+                    <div class="tab" id="tab-<?php the_ID(); ?>"><?php the_title(); ?></div>
                   <?php
                     }
                     wp_reset_postdata(); // сброс
@@ -96,11 +98,12 @@ Template Name: Home
         $item = get_the_ID();
 
         foreach ($posts as $post) {
-          setup_postdata($post); 
+          setup_postdata($post);
+          $item_cat = get_field('category');
           ?>
-          <div class="dish-item <?php the_field('category'); ?>">
+          <div class="dish-item show cat-<?php echo $item_cat->ID; ?>">
             <div class="dish-title"> 
-              <h4><?php the_title(); ?></h4>
+              <h4><?php echo $item_cat->post_title; ?></h4>
               <h4 class="bold"><?php the_field('item__name'); ?></h4>
               <div class="gramms" style="display: none;"><?php the_field('gramms'); ?></div>
             </div><img class="food-img photo" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="">
@@ -140,7 +143,7 @@ Template Name: Home
           $about_count = 0;
           foreach ($posts as $post) {
             setup_postdata($post);
-            $product_count ++;
+            $about_count ++;
 				    if ( $about_count === 1 ) {
             ?>
           <div class="row about-row">
