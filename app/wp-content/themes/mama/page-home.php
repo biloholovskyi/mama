@@ -56,11 +56,26 @@ Template Name: Home
         <div class="row">     
           <div class="col-12">
             <div class="tabs" id="tabs">
-              <div class="tab active " onclick="filterSelection('all')"> Все <span>категории</span></div>
-              <div class="tab" onclick="filterSelection('salat')">Салаты</div>
-              <div class="tab" onclick="filterSelection('soup')"> Супы</div>
-              <div class="tab" onclick="filterSelection('other')">Второе</div>
-              <div class="tab" onclick="filterSelection('drink')">Напитки  </div>
+                <div class="tab active " onclick="filterSelection('all')"> Все <span>категории</span></div>
+                <?php
+                  $args = array(
+                    'numberposts' => -1, // если -1 то выводит все
+                    'orderby' => 'date',
+                    'order' => 'ASC',
+                    'post_type' => 'category', // тип поста
+                    'suppress_filters' => true,
+                  );
+
+                  $posts = get_posts($args);
+
+                  foreach ($posts as $post) {
+                    setup_postdata($post);
+                    ?>
+                    <div class="tab" onclick="filterSelection('<?php the_field('category'); ?>')"><?php the_title(); ?></div>
+                  <?php
+                    }
+                    wp_reset_postdata(); // сброс
+                    ?>
             </div>
           </div>
         </div>
@@ -75,12 +90,15 @@ Template Name: Home
           'suppress_filters' => true,
         );
 
+        
+
         $posts = get_posts($args);
+        $item = get_the_ID();
 
         foreach ($posts as $post) {
           setup_postdata($post); 
           ?>
-          <div data-id="2" class="dish-item <?php the_field('category'); ?>">
+          <div class="dish-item <?php the_field('category'); ?>">
             <div class="dish-title"> 
               <h4><?php the_title(); ?></h4>
               <h4 class="bold"><?php the_field('item__name'); ?></h4>
