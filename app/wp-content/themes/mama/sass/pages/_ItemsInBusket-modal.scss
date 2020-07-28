@@ -47,7 +47,8 @@
     padding-left: 24px;
     padding-right: 24px;
     min-height: 350px;
-
+    max-height: 350px;
+    overflow: auto;
     .item {
       display: flex;
       margin-bottom: 20px;
@@ -158,6 +159,10 @@
         object-fit: cover;
         cursor: pointer;
       }
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 
