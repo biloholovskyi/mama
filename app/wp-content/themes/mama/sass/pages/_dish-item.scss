@@ -15,7 +15,7 @@
     margin: 0 auto;
     margin-bottom: 32px;
   }
-
+ 
   .tabs {
     display: flex;
     justify-content: center;
@@ -31,6 +31,7 @@
       margin-right: 32px;
       padding-bottom: 4px;
       cursor: pointer;
+      white-space: nowrap;
     }
 
     & .tab.active {
@@ -107,7 +108,16 @@
       display: flex;
       justify-content: center;
       font-size: 18px;
-
+      padding-right: 0;
+      .select {
+        width: 100%;
+        .select-styled {
+          padding-left: 39px;
+        }
+        .select-options {
+          padding-left: 23px;
+        }
+      }
       &:after {
         right: 30px;
       }

@@ -1,6 +1,7 @@
 import 'normalize.css';
 import {switchTabs} from "./tabs";
 import Cart from "./cart";
+import './select';
 
 const cart = new Cart();
 
@@ -60,7 +61,38 @@ $(document).ready((e) => {
       $(this).siblings().removeClass('active');
       $(this).addClass('active');
     }
-  });
+  }); 
+
+  //
+  // $('.slider-item').on('click', function () {
+  //   const current = $(this);
+  //   const id = current.attr('id');
+
+  //   const img = current.children('.slider-img').attr('src');
+  //   const title = current.children('.slider-info').find('h1').html();
+  //   const title2 = current.children('.slider-info').find('.desc').html();
+  //   // const gramm = current.children('.dish-title').find('.gramms').html();
+  //   const price = current.children('.slider-info').find('.price').find('p').html();
+
+  //   $('.modal-img').css('background-image', 'url(' + img + ')');
+  //   $('.modal-info h4').html(title);
+  //   $('.modal-info h3').html(title);
+  //   $('.info-dish .price').html(price); 
+  //   // $('.info-dish .weight').html(gramm + 'g'); 
+
+
+  //   $('.small-img').css('background-image', 'url(' + img + ')');
+  //   $('.addbusket-modal .small-title').find('.kind').html(title);
+  //   $('.addbusket-modal .small-title').find('.name').html(title2);
+
+
+  //   $('.addBusket').attr('data-product', id);
+
+  //   $('.dish-overlay').css('visibility', 'visible');
+  //   $('body').addClass('active');
+
+  //   $('.item-in-busket').css({'display': 'none'});
+  // });
 
 
   // card food modal
@@ -90,6 +122,8 @@ $(document).ready((e) => {
 
     $('.dish-overlay').css('visibility', 'visible');
     $('body').addClass('active');
+
+    $('.item-in-busket').css({'display': 'none'});
   });
 
   $('.modal-close').on('click', function () {
@@ -101,7 +135,7 @@ $(document).ready((e) => {
   // close modal busket
   $('.modal-close3').on('click', function () {
     $('.item-in-busket').css('display', 'none');
-    cart.renderOrder();
+    cart.renderOrder(); 
   });
 
   // modal add on busket
@@ -128,7 +162,6 @@ $(document).ready((e) => {
   });
 
 
-//
 
   $('.salat_menu').on('click', function () {
     $('.popular-dishes .tabs .salat_menu').addClass('active').siblings().removeClass('active');
@@ -150,9 +183,10 @@ $(document).mouseup(function (e) {
 });
 
 $(document).on('click', function (e) {
-  let modal = $('.modal-content, .item-in-busket');
-  let btn = $('.dish-item, .contine, .inbusket, .dlt-item');
+  let modal = $('.modal-content, .item-in-busket, .addbusket-modal');
+  let btn = $('.dish-item, .contine, .inbusket, .dlt-item, .addBusket, .slider-item'); 
   if(e.target.classList.contains('dlt-item') || e.target.classList.contains('plus') || e.target.classList.contains('minus')) {
+    $('.inbusket').css('display', 'none');
     return
   }
 
@@ -161,6 +195,7 @@ $(document).on('click', function (e) {
     if (!modal.is(e.target) && modal.has(e.target).length === 0) {
       $('.dish-overlay').css('visibility', 'hidden');
       $('.order-overlay').css('visibility', 'hidden');
+      $('.addbusket-modal').css('visibility', 'hidden');
       $('.item-in-busket').css('display', 'none');
       cart.renderOrder();
     }

@@ -17,26 +17,34 @@ Template Name: Home
               'post_type' => 'slider', // тип поста
               'suppress_filters' => true,
             );
-
+            $item = get_the_ID();
             $posts = get_posts($args);
 
             foreach ($posts as $post) {
               setup_postdata($post);
               $product = get_field('product_slider');
+              $item_cat = get_field('category');
               ?>
-              <div class="item">
+              <div class="item cat-<?php echo $item_cat->ID; ?>" id="<?php the_ID(); ?>" > 
                 <div class="slider-info">
                   <h1><?php echo $product->post_title; ?></h1>
                   <p class="desc"><?php the_field('desc', $product->ID); ?></p>
                   <div class="count-list-wrap">
-                    <div class="select-num">1 порция</div>
+                    <div class="select-num">
+                      <select id="dish_number">
+                        <option (value="hide")> 1 порция </option>
+                        <option (value="02")>3 порции</option>
+                        <option (value="03")>6 порций</option>
+                      </select>
+                    </div>
                     <div class="price"> 
                       <div class="offer"><?php the_field('item__price', $product->ID); ?>₽</div>
                       <p><?php the_field('item_price_small', $product->ID); ?>₽</p>
                     </div>
                     <button class="busket"></button>
                   </div>
-                </div><img class="slider-img" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $product->ID ) ); ?>" alt="image">
+                </div>
+                <img class="slider-img" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $product->ID ) ); ?>" alt="image">
               </div>
               <?php
               }
@@ -55,7 +63,7 @@ Template Name: Home
           </div>
         </div>
         <div class="row">     
-          <div class="col-12">
+          <div class="col-12 tab-col">
             <div class="tabs" id="tabs">
                 <div class="tab active" id="tab-all"> Все <span>категории</span></div>
 
@@ -108,7 +116,13 @@ Template Name: Home
               <div class="gramms" style="display: none;"><?php the_field('gramms'); ?></div>
             </div><img class="food-img photo" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>" alt="">
             <div class="dish-list-wrap">
-              <div class="select-num">1 порция</div>  
+              <div class="select-num">
+                      <select id="dish_number">
+                        <option (value="hide")> 1 порция </option>
+                        <option (value="02")>3 порции</option>
+                        <option (value="03")>6 порций</option>
+                      </select>
+            </div>  
               <button class="busket" data-id="1" ><?php the_field('item__price'); ?>₽</button>
             </div>
           </div>
@@ -298,8 +312,8 @@ Template Name: Home
         <div class="modal-close"></div>
         <div class="modal-img"></div>
         <div class="modal-info">
-          <h4>Салат</h4>
-          <h3>Греческийssssss</h3>
+          <h4></h4>
+          <h3></h3>
           <p>Курица, лапша яичная, бульон куриный морковь, лук</p>
           <div class="modal-btns">
             <div class="modal-btn">

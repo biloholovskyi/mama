@@ -14,7 +14,7 @@ class Cart {
       $('.addbusket-modal').css('visibility', 'hidden');
       this.smallCart.style.display = 'flex';
       this.renderOrder();
-    }, 4000);
+    }, 3000);
 
     const date = new Date();
     const lifeTime = date.getTime() + (24 * 60 * 60 * 1000);
@@ -67,6 +67,7 @@ class Cart {
         this.smallCart.style.display = 'flex';
         document.querySelector('.numberOfItem').innerHTML = order.listOrder.length.toString();
         let allPrice = 0;
+        let allWeight = 0;
         order.listOrder.forEach(singleOrder => {
           const id = singleOrder.id;
           const count = singleOrder.count;
@@ -75,7 +76,9 @@ class Cart {
           const gram = cart.getAttribute('data-gram');
           const img = cart.querySelector('.food-img').getAttribute('src');
           const price = parseInt(cart.querySelector('.busket').innerHTML);
+          const weight = parseInt(cart.querySelector('.gramms').innerHTML);
           allPrice += price * count;
+          allWeight += weight * count;
 
           const newItem = document.createElement('div');
           newItem.classList.add('item');
@@ -102,7 +105,7 @@ class Cart {
           nameBlock.innerHTML = name;
           const gramBlock = document.createElement('div');
           gramBlock.classList.add('grams');
-          gramBlock.innerHTML = gram + ' грамм';
+          gramBlock.innerHTML = allWeight + ' грамм';
           titles.append(nameBlock);
           titles.append(gramBlock);
           left.append(titles);
@@ -127,7 +130,7 @@ class Cart {
 
           const dlt = document.createElement('div');
           dlt.className = 'dlt-item';
-          dlt.setAttribute('data-id', id);
+          dlt.setAttribute('data-id', id); 
 
           right.append(dlt);
           newItem.append(left);
@@ -135,6 +138,11 @@ class Cart {
           this.busketBody.append(newItem);
         });
         document.querySelector('.item-in-busket .itemInBusket-btn .price-wrap .price').innerHTML = allPrice + '₽';
+
+        document.querySelectorAll('.grams').forEach(item => {
+          item.innerHTML = allWeight + ' Грамм';
+        });
+        
       }
     }
   }

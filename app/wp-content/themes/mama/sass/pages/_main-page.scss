@@ -411,8 +411,8 @@
 .select-num {
   position: relative;
   background-color: transparent;
-  padding: 8px 12px 8px 12px;
- 
+  padding: 8px 12px 8px 0px;
+  display: flex;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
